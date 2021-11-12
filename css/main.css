@@ -5,6 +5,7 @@
   --dark-gray: hsl(0, 0%, 48%);
   --text-color: hsl(0, 0%, 7%);
   --accent-color: hsl(216, 61%, 54%);
+  --grey100: hsl(0, 0%, 92%);
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
   --base-font-size: 16px;
@@ -200,6 +201,14 @@ input[type=submit] {
     grid-column-start: 3;
     grid-column-end: -3;
   }
+}
+
+.container {
+  margin-bottom: 1.5rem;
+  padding: 2.7rem;
+  background-color: white;
+  border: 1px solid var(--grey100);
+  border-radius: 0.4rem;
 }
 
 /*# sourceMappingURL=main.css.map */
