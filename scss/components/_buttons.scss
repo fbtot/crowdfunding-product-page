@@ -1,1 +1,63 @@
 @use "../index" as *;
+
+.button,
+button {
+  border-radius: 100px;
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.button--cyan {
+  @extend.button;
+  background-color: var(--moderate-cyan);
+  color: white;
+
+  &:hover {
+    background-color: var(--dark-cyan);
+  }
+}
+
+.button--icon {
+  @extend .button;
+  padding: 0 1rem 0 0;
+  position: relative;
+  display: flex;
+  align-content: center;
+
+  &:hover {
+    circle {
+      fill: #5d5d5d;
+    }
+  }
+
+  svg {
+    height: 100%;
+    margin-right: 1rem;
+  }
+  circle {
+    fill: #2f2f2f;
+  }
+
+  path {
+    fill: #b1b1b1;
+  }
+
+  span {
+    margin: auto;
+  }
+}
+
+.button--icon.bookmarked {
+  color: var(--dark-cyan);
+
+  circle,
+  &:hover circle {
+    fill: var(--dark-cyan);
+  }
+
+  path {
+    fill: white;
+  }
+}
