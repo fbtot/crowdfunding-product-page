@@ -1,1 +1,27 @@
 @use "../index" as *;
+.header-container,
+.main-content-container {
+  @include mq($desktop-width, up) {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.header {
+  display: flex;
+  @include mq($desktop-width, up) {
+    @include column-start-end(2, -2);
+  }
+}
+
+.header__nav {
+  margin-left: auto;
+}
+
+.intro,
+.project-status,
+.about {
+  @include mq($desktop-width, up) {
+    @include column-start-end(3, -3);
+  }
+}

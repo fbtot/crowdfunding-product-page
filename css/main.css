@@ -158,4 +158,48 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.header-container,
+.main-content-container {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 800px) {
+  .header-container,
+.main-content-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.header {
+  display: flex;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 800px) {
+  .header {
+    grid-column-start: 2;
+    grid-column-end: -2;
+  }
+}
+
+.header__nav {
+  margin-left: auto;
+}
+
+.intro,
+.project-status,
+.about {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 800px) {
+  .intro,
+.project-status,
+.about {
+    grid-column-start: 3;
+    grid-column-end: -3;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
