@@ -352,7 +352,8 @@ button {
     position: absolute;
     right: 0;
     top: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 2rem var(--padding-container) 10rem;
     /* end header__nav.open */
@@ -360,6 +361,7 @@ button {
   }
   .header__nav-container.open .header__nav {
     width: 100%;
+    margin-top: 2rem;
     display: block;
     z-index: 100;
     border-radius: var(--border-radius-container);
@@ -381,6 +383,10 @@ button {
   .header__nav-container.open .header__nav a:hover {
     color: var(--moderate-cyan);
   }
+  .header__nav-container.open .header__hamburger {
+    margin-left: auto;
+  }
+
   /* end header nav container */
 }
 /* end mixin mq */
