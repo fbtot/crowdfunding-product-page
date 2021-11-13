@@ -237,12 +237,20 @@ input[type=submit] {
 .header-container {
   /* mixin mq */
   /* end mixin mq */
+  /* mixin mq */
+  /* end mixin mq */
 }
 @media screen and (min-width: 650px) {
   .header-container {
-    /* prettier-ignore */
-    background: var(--header-gradient), url(../../images/image-hero-desktop.jpg) center center no-repeat;
-    height: 20.7rem;
+    background: var(--header-gradient), url(../images/image-hero-desktop.jpg) center center no-repeat;
+    height: 25rem;
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 649px) {
+  .header-container {
+    background: var(--header-gradient), url(../images/image-hero-mobile.jpg) center center no-repeat;
+    height: 18.7rem;
     background-size: cover;
   }
 }

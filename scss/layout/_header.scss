@@ -2,11 +2,14 @@
 
 .header-container {
   @include mq($tablet-width, up) {
-    /* prettier-ignore */
-    background: var(--header-gradient), 
-    url(../../images/image-hero-desktop.jpg) center center no-repeat
-    ;
-    height: 20.7rem;
+    background: var(--header-gradient), url(../images/image-hero-desktop.jpg) center center no-repeat;
+    height: 25rem;
+    background-size: cover;
+  }
+
+  @include mq($tablet-width, down) {
+    background: var(--header-gradient), url(../images/image-hero-mobile.jpg) center center no-repeat;
+    height: 18.7rem;
     background-size: cover;
   }
 }
