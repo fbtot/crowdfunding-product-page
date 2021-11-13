@@ -1,15 +1,14 @@
 @use "../index" as *;
-
 .header-container {
-  @include mq($tablet-width, up) {
-    background: var(--header-gradient), url(../images/image-hero-desktop.jpg) center center no-repeat;
-    height: 25rem;
-    background-size: cover;
-  }
+  padding-top: 2rem;
+  background: var(--header-gradient), url(../images/image-hero-mobile.jpg) center center no-repeat;
+  height: 18.7rem;
+  background-size: cover;
 
-  @include mq($tablet-width, down) {
-    background: var(--header-gradient), url(../images/image-hero-mobile.jpg) center center no-repeat;
-    height: 18.7rem;
+  @include mq($tablet-width, up) {
+    padding-top: 3rem;
+    height: 25rem;
+    background: var(--header-gradient), url(../images/image-hero-desktop.jpg) center center no-repeat;
     background-size: cover;
   }
 }
