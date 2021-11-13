@@ -1,7 +1,8 @@
 @use "../index" as *;
 .header-container,
 .main-content-container {
-  @include mq($desktop-width, up) {
+  padding: 1rem;
+  @include mq($tablet-width, up) {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
   }
@@ -9,7 +10,7 @@
 
 .header {
   display: flex;
-  @include mq($desktop-width, up) {
+  @include mq($tablet-width, up) {
     @include column-start-end(2, -2);
   }
 }
@@ -23,5 +24,8 @@
 .about {
   @include mq($desktop-width, up) {
     @include column-start-end(3, -3);
+  }
+  @include mq($tablet-width, $desktop-width) {
+    @include column-start-end(2, -2);
   }
 }

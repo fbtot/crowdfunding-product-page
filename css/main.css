@@ -173,10 +173,11 @@ input[type=submit] {
 
 .header-container,
 .main-content-container {
+  padding: 1rem;
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 650px) {
   .header-container,
 .main-content-container {
     display: grid;
@@ -189,7 +190,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 650px) {
   .header {
     grid-column-start: 2;
     grid-column-end: -2;
@@ -205,13 +206,23 @@ input[type=submit] {
 .about {
   /* mixin mq */
   /* end mixin mq */
+  /* mixin mq */
+  /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1050px) {
   .intro,
 .project-status,
 .about {
     grid-column-start: 3;
     grid-column-end: -3;
+  }
+}
+@media screen and (min-width: 650px) and (max-width: 1049px) {
+  .intro,
+.project-status,
+.about {
+    grid-column-start: 2;
+    grid-column-end: -2;
   }
 }
 
