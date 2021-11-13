@@ -7,8 +7,26 @@
 
   @include mq($tablet-width, up) {
     display: block;
-  }
-}
+
+    li {
+      display: inline-block;
+
+      + li {
+        margin-left: 2rem;
+      }
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: var(--small-font-size);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    } /* end a */
+  } /* end media query */
+} /* end header nav */
 
 .header__hamburger {
   margin-left: auto;
@@ -70,3 +88,7 @@
     }
   } /* end header nav container */
 } /* end mq */
+
+/* ············ § DESKTOP ··· */
+@include mq($tablet-width, up) {
+}

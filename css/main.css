@@ -343,13 +343,30 @@ button {
   display: none;
   /* mixin mq */
   /* end mixin mq */
+  /* end media query */
 }
 @media screen and (min-width: 650px) {
   .header__nav {
     display: block;
+    /* end a */
+  }
+  .header__nav li {
+    display: inline-block;
+  }
+  .header__nav li + li {
+    margin-left: 2rem;
+  }
+  .header__nav a {
+    color: white;
+    text-decoration: none;
+    font-size: var(--small-font-size);
+  }
+  .header__nav a:hover {
+    text-decoration: underline;
   }
 }
 
+/* end header nav */
 .header__hamburger {
   margin-left: auto;
   display: block;
@@ -413,5 +430,8 @@ button {
 }
 /* end mixin mq */
 /* end mq */
+/* ············ § DESKTOP ··· */
+/* mixin mq */
+/* end mixin mq */
 
 /*# sourceMappingURL=main.css.map */
