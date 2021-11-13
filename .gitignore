@@ -1,6 +1,7 @@
 # This project #
 ######################
 /originals
+/node_modules
 
 # Compiled source #
 ###################
