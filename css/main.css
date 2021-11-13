@@ -43,6 +43,25 @@
   border: 0;
 }
 
+@keyframes focusin {
+  from {
+    filter: blur(20px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 100%;
+  }
+}
+.focus-in, .focus-out {
+  animation-name: focusin;
+  animation-duration: 0.8s;
+}
+
+.focus-out {
+  animation-direction: reverse;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -332,6 +351,11 @@ button {
 }
 
 .header__hamburger {
+  margin-left: auto;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url(../../images/icon-hamburger.svg) 0 0 no-repeat;
   /* mixin mq */
   /* end mixin mq */
 }
@@ -357,7 +381,6 @@ button {
     width: 100%;
     padding: 2rem var(--padding-container) 10rem;
     /* end header__nav.open */
-    /* HAMBURGER MENU */
   }
   .header__nav-container.open .header__nav {
     width: 100%;
@@ -368,13 +391,12 @@ button {
     background: white;
     /* end a */
   }
-  .header__nav-container.open .header__nav li {
-    padding: 2rem 1.5rem;
-  }
   .header__nav-container.open .header__nav li + li {
     border-top: 1px solid var(--grey100);
   }
   .header__nav-container.open .header__nav a {
+    padding: 2rem 1.5rem;
+    display: block;
     font-size: 1.3rem;
     color: black;
     text-decoration: none;
@@ -384,7 +406,7 @@ button {
     color: var(--moderate-cyan);
   }
   .header__nav-container.open .header__hamburger {
-    margin-left: auto;
+    background: url(../../images/icon-close-menu.svg) 0 0 no-repeat;
   }
 
   /* end header nav container */

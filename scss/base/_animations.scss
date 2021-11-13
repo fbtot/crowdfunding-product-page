@@ -1,0 +1,19 @@
+@keyframes focusin {
+  from {
+    filter: blur(20px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 100%;
+  }
+}
+.focus-in {
+  animation-name: focusin;
+  animation-duration: 0.8s;
+}
+
+.focus-out {
+  @extend .focus-in;
+  animation-direction: reverse;
+}

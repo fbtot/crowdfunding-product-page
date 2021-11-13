@@ -11,6 +11,12 @@
 }
 
 .header__hamburger {
+  margin-left: auto;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url(../../images/icon-hamburger.svg) 0 0 no-repeat;
+
   @include mq($tablet-width, up) {
     display: none;
   }
@@ -40,13 +46,14 @@
       background: white;
 
       li {
-        padding: 2rem 1.5rem;
         & + li {
           border-top: 1px solid var(--grey100);
         }
       }
 
       a {
+        padding: 2rem 1.5rem;
+        display: block;
         font-size: 1.3rem;
         color: black;
         text-decoration: none;
@@ -58,9 +65,8 @@
       } /* end a */
     } /* end header__nav.open */
 
-    /* HAMBURGER MENU */
     .header__hamburger {
-      margin-left: auto;
+      background: url(../../images/icon-close-menu.svg) 0 0 no-repeat;
     }
   } /* end header nav container */
 } /* end mq */
