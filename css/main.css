@@ -189,7 +189,7 @@ input[type=submit] {
 @media screen and (max-width: 649px) {
   .header-container,
 .main-content-container {
-    padding: 1rem;
+    padding: 0 1.5rem;
   }
 }
 
