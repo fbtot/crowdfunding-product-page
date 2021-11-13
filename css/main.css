@@ -3,6 +3,7 @@
   --moderate-cyan: hsl(176, 50%, 47%);
   --dark-cyan: hsl(176, 72%, 28%);
   --dark-gray: hsl(0, 0%, 48%);
+  --header-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
   --text-color: var(--dark-gray);
   --accent-color: hsl(216, 61%, 54%);
   --grey100: hsl(0, 0%, 92%);
@@ -223,6 +224,18 @@ input[type=submit] {
 .about {
     grid-column-start: 2;
     grid-column-end: -2;
+  }
+}
+
+.header-container {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .header-container {
+    /* prettier-ignore */
+    background: var(--header-gradient), url(../../images/image-hero-desktop.jpg) center center no-repeat;
+    height: 20.7rem;
   }
 }
 

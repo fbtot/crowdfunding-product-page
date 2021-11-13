@@ -1,1 +1,11 @@
 @use "../index" as *;
+
+.header-container {
+  @include mq($tablet-width, up) {
+    /* prettier-ignore */
+    background: var(--header-gradient), 
+    url(../../images/image-hero-desktop.jpg) center center no-repeat
+    ;
+    height: 20.7rem;
+  }
+}
