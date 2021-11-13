@@ -174,7 +174,8 @@ input[type=submit] {
 
 .header-container,
 .main-content-container {
-  padding: 1rem;
+  /* mixin mq */
+  /* end mixin mq */
   /* mixin mq */
   /* end mixin mq */
 }
@@ -183,6 +184,12 @@ input[type=submit] {
 .main-content-container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+  }
+}
+@media screen and (max-width: 649px) {
+  .header-container,
+.main-content-container {
+    padding: 1rem;
   }
 }
 

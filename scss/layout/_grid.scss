@@ -1,10 +1,13 @@
 @use "../index" as *;
 .header-container,
 .main-content-container {
-  padding: 1rem;
   @include mq($tablet-width, up) {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+  }
+
+  @include mq($tablet-width, down) {
+    padding: 1rem;
   }
 }
 
