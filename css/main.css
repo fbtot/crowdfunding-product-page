@@ -382,10 +382,9 @@ button {
   }
 }
 
-/* ············ § MOBILE ··· */
+/* ············ § MOBILE OPEN STATE ··· */
 /* mixin mq */
 @media screen and (max-width: 649px) {
-  /* OPEN STATE */
   .header__nav-container.open {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
     height: 100vh;

@@ -40,9 +40,8 @@
   }
 }
 
-/* ············ § MOBILE ··· */
+/* ············ § MOBILE OPEN STATE ··· */
 @include mq($tablet-width, down) {
-  /* OPEN STATE */
   .header__nav-container.open {
     background: linear-gradient(to bottom, rgba(black, 0.8), rgba(black, 0));
     height: 100vh;
