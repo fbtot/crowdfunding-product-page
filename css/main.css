@@ -20,6 +20,16 @@
   --h4-font-size: 1.3rem;
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
+  --padding-container: 1.5rem;
+  --border-radius-container: 0.4rem;
+}
+
+.header__nav,
+.header__nav li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
 }
 
 .sr-only {
@@ -189,7 +199,7 @@ input[type=submit] {
 @media screen and (max-width: 649px) {
   .header-container,
 .main-content-container {
-    padding: 0 1.5rem;
+    padding: 0 var(--padding-container);
   }
 }
 
@@ -205,7 +215,7 @@ input[type=submit] {
   }
 }
 
-.header__nav {
+.header__nav-container {
   margin-left: auto;
 }
 
@@ -306,7 +316,74 @@ button {
   padding: 2.7rem;
   background-color: white;
   border: 1px solid var(--grey100);
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-container);
 }
+
+/* ========================== § HEADER MENU === */
+.header__nav {
+  display: none;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .header__nav {
+    display: block;
+  }
+}
+
+.header__hamburger {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .header__hamburger {
+    display: none;
+  }
+}
+
+/* ············ § MOBILE ··· */
+/* mixin mq */
+@media screen and (max-width: 649px) {
+  /* OPEN STATE */
+  .header__nav-container.open {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    height: 100vh;
+    z-index: 100;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    padding: 2rem var(--padding-container) 10rem;
+    /* end header__nav.open */
+    /* HAMBURGER MENU */
+  }
+  .header__nav-container.open .header__nav {
+    width: 100%;
+    display: block;
+    z-index: 100;
+    border-radius: var(--border-radius-container);
+    background: white;
+    /* end a */
+  }
+  .header__nav-container.open .header__nav li {
+    padding: 2rem 1.5rem;
+  }
+  .header__nav-container.open .header__nav li + li {
+    border-top: 1px solid var(--grey100);
+  }
+  .header__nav-container.open .header__nav a {
+    font-size: 1.3rem;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .header__nav-container.open .header__nav a:hover {
+    color: var(--moderate-cyan);
+  }
+  /* end header nav container */
+}
+/* end mixin mq */
+/* end mq */
 
 /*# sourceMappingURL=main.css.map */
