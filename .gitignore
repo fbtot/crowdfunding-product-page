@@ -2,6 +2,7 @@
 ######################
 /originals
 /node_modules
+/.vscode
 
 # Compiled source #
 ###################
