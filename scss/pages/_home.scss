@@ -98,3 +98,8 @@
 .project-status__progress-bar-container {
   @include column-start-end(1, -1);
 }
+
+.project-status__progress-bar {
+  margin-top: 2rem;
+  width: 100%;
+}

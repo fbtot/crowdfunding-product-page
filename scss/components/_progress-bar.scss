@@ -1,4 +1,9 @@
 @use "../index.scss" as *;
 
 .progress-bar {
+  @include progress-bar-colors(var(--grey100), var(--moderate-cyan));
+  border-radius: 100px;
+  overflow: hidden;
+  border: none;
+  height: 0.8rem;
 }

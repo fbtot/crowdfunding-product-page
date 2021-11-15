@@ -472,6 +472,26 @@ button {
 /* ············ § DESKTOP ··· */
 /* mixin mq */
 /* end mixin mq */
+.progress-bar {
+  /* @mixin progress-bar-colors */
+  background-color: var(--grey100);
+  -webkit-appearance: none;
+  /* end @mixin progress-bar-colors */
+  border-radius: 100px;
+  overflow: hidden;
+  border: none;
+  height: 0.8rem;
+}
+.progress-bar::-webkit-progress-bar {
+  background-color: var(--grey100);
+}
+.progress-bar::-webkit-progress-value {
+  background-color: var(--moderate-cyan);
+}
+.progress-bar::-moz-progress-bar {
+  background-color: var(--moderate-cyan);
+}
+
 /* ========================== § INTRO === */
 .intro {
   text-align: center;
@@ -597,6 +617,11 @@ button {
 .project-status__progress-bar-container {
   grid-column-start: 1;
   grid-column-end: -1;
+}
+
+.project-status__progress-bar {
+  margin-top: 2rem;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
