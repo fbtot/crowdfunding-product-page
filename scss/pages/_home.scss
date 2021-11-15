@@ -95,6 +95,7 @@
   }
 }
 
+/* ············ § PROGRESS BAR ··· */
 .project-status__progress-bar-container {
   @include column-start-end(1, -1);
 }
@@ -102,4 +103,34 @@
 .project-status__progress-bar {
   margin-top: 2rem;
   width: 100%;
+}
+
+/* ========================== § ABOUT === */
+.about {
+  @include mq($tablet-width, down) {
+    font-size: var(--small-font-size);
+  }
+}
+
+.about__title {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+
+  @include mq($tablet-width, up) {
+    margin-top: 0.2rem;
+    margin-bottom: 2.3rem;
+  }
+}
+
+.about__text-container {
+  line-height: 1.55rem;
+
+  @include mq($tablet-width, up) {
+    line-height: 1.9em;
+  }
+
+  p {
+    margin-bottom: 1.9rem;
+  }
 }

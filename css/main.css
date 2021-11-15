@@ -614,6 +614,7 @@ button {
   margin-bottom: 0.7rem;
 }
 
+/* ············ § PROGRESS BAR ··· */
 .project-status__progress-bar-container {
   grid-column-start: 1;
   grid-column-end: -1;
@@ -622,6 +623,45 @@ button {
 .project-status__progress-bar {
   margin-top: 2rem;
   width: 100%;
+}
+
+/* ========================== § ABOUT === */
+.about {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 649px) {
+  .about {
+    font-size: var(--small-font-size);
+  }
+}
+
+.about__title {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .about__title {
+    margin-top: 0.2rem;
+    margin-bottom: 2.3rem;
+  }
+}
+
+.about__text-container {
+  line-height: 1.55rem;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .about__text-container {
+    line-height: 1.9em;
+  }
+}
+.about__text-container p {
+  margin-bottom: 1.9rem;
 }
 
 /*# sourceMappingURL=main.css.map */
