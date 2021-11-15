@@ -22,12 +22,14 @@
 }
 :root {
   --moderate-cyan: hsl(176, 50%, 47%);
+  --moderate-cyan-pale: hsl(178, 55%, 73%);
   --dark-cyan: hsl(176, 72%, 28%);
   --dark-gray: hsl(0, 0%, 48%);
   --header-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
   --text-color: var(--dark-gray);
   --accent-color: hsl(216, 61%, 54%);
   --grey100: hsl(0, 0%, 92%);
+  --grey200: hsl(0, 0%, 80%);
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
   --base-font-size: 16px;
@@ -62,6 +64,15 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* ========================== § THIS PROJECT === */
+.pledge, .pledge--inactive, .container {
+  margin-bottom: 1.5rem;
+  padding: 2.7rem;
+  background-color: white;
+  border: 1px solid var(--grey100);
+  border-radius: var(--border-radius-container);
 }
 
 @keyframes focusin {
@@ -370,14 +381,6 @@ button {
   fill: white;
 }
 
-.container {
-  margin-bottom: 1.5rem;
-  padding: 2.7rem;
-  background-color: white;
-  border: 1px solid var(--grey100);
-  border-radius: var(--border-radius-container);
-}
-
 /* ========================== § HEADER MENU === */
 .header__nav {
   display: none;
@@ -490,6 +493,68 @@ button {
 }
 .progress-bar::-moz-progress-bar {
   background-color: var(--moderate-cyan);
+}
+
+.pledge, .pledge--inactive {
+  padding: 2.2rem 1.8rem;
+}
+
+.pledge__header,
+.pledge__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pledge__header {
+  margin-bottom: 1.2rem;
+}
+
+.pledge__title {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.pledge__amount {
+  color: var(--moderate-cyan);
+  font-weight: 500;
+}
+
+.pledge__footer {
+  margin-top: 1.9rem;
+}
+
+.pledge__left {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+}
+.pledge__left span {
+  margin-right: 0.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1rem;
+  color: black;
+}
+
+.pledge__select {
+  font-size: var(--small-font-size);
+  padding: 1rem 2rem;
+}
+
+.pledge--inactive .pledge__title,
+.pledge--inactive .pledge__left span {
+  color: var(--dark-gray);
+}
+.pledge--inactive .pledge__amount {
+  color: var(--moderate-cyan-pale);
+}
+.pledge--inactive .pledge__reward,
+.pledge--inactive .pledge__left {
+  color: var(--grey200);
+}
+.pledge--inactive .pledge__select {
+  background-color: var(--grey200);
+  cursor: not-allowed;
 }
 
 /* ========================== § INTRO === */

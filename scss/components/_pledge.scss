@@ -1,0 +1,71 @@
+@use "../index.scss" as *;
+
+.pledge {
+  @extend %container;
+  padding: 2.2rem 1.8rem;
+}
+
+.pledge__header,
+.pledge__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pledge__header {
+  margin-bottom: 1.2rem;
+}
+
+.pledge__title {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.pledge__amount {
+  color: var(--moderate-cyan);
+  font-weight: 500;
+}
+
+.pledge__footer {
+  margin-top: 1.9rem;
+}
+
+.pledge__left {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+
+  span {
+    margin-right: 0.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1rem;
+    color: black;
+  }
+}
+
+.pledge__select {
+  font-size: var(--small-font-size);
+  padding: 1rem 2rem;
+}
+
+.pledge--inactive {
+  @extend .pledge;
+
+  .pledge__title,
+  .pledge__left span {
+    color: var(--dark-gray);
+  }
+
+  .pledge__amount {
+    color: var(--moderate-cyan-pale);
+  }
+  .pledge__reward,
+  .pledge__left {
+    color: var(--grey200);
+  }
+
+  .pledge__select {
+    background-color: var(--grey200);
+    cursor: not-allowed;
+  }
+}

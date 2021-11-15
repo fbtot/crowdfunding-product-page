@@ -1,9 +1,5 @@
 @use "../index.scss" as *;
 
 .container {
-  margin-bottom: 1.5rem;
-  padding: 2.7rem;
-  background-color: white;
-  border: 1px solid var(--grey100);
-  border-radius: var(--border-radius-container);
+  @extend %container;
 }
