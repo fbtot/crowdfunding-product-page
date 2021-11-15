@@ -1,1 +1,21 @@
 @use "../index" as *;
+
+/* ========================== § INTRO === */
+.intro {
+  text-align: center;
+  position: relative;
+}
+.intro__logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.intro__title {
+  margin-top: 0.6rem;
+  font-size: 1.3rem;
+
+  @include mq($tablet-width, up) {
+    font-size: 1.75rem;
+  }
+}
