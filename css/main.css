@@ -55,7 +55,7 @@
 }
 .focus-in, .focus-out {
   animation-name: focusin;
-  animation-duration: 0.8s;
+  animation-duration: 0.3s;
 }
 
 .focus-out {
