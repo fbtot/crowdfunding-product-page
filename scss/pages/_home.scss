@@ -41,3 +41,60 @@
     }
   }
 }
+
+/* ========================== § STATUS OF THE PROJECT === */
+.project-status {
+  @include mq($tablet-width, down) {
+    text-align: center;
+  }
+}
+
+.project-status__number-container {
+  @include mq($tablet-width, up) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-status__status-container {
+  @include mq($tablet-width, up) {
+    margin-top: 1rem;
+
+    + .project-status__status-container {
+      border-left: 1px solid var(--grey100);
+      padding-left: 2rem;
+      margin-left: -1rem;
+    }
+  }
+
+  @include mq($tablet-width, down) {
+    position: relative;
+    + .project-status__status-container {
+      margin-top: 1rem;
+      padding-top: 2.2rem;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 35%;
+        width: 30%;
+        height: 1px;
+        border-top: 1px solid var(--grey100);
+      }
+    }
+  }
+}
+.project-status__status {
+  font-size: var(--small-font-size);
+  span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 0.7rem;
+  }
+}
+
+.project-status__progress-bar-container {
+  @include column-start-end(1, -1);
+}

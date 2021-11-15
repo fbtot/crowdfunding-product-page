@@ -505,4 +505,77 @@ button {
   }
 }
 
+/* ========================== § STATUS OF THE PROJECT === */
+.project-status {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 649px) {
+  .project-status {
+    text-align: center;
+  }
+}
+
+.project-status__number-container {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .project-status__number-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-status__status-container {
+  /* mixin mq */
+  /* end mixin mq */
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .project-status__status-container {
+    margin-top: 1rem;
+  }
+  .project-status__status-container + .project-status__status-container {
+    border-left: 1px solid var(--grey100);
+    padding-left: 2rem;
+    margin-left: -1rem;
+  }
+}
+@media screen and (max-width: 649px) {
+  .project-status__status-container {
+    position: relative;
+  }
+  .project-status__status-container + .project-status__status-container {
+    margin-top: 1rem;
+    padding-top: 2.2rem;
+  }
+  .project-status__status-container + .project-status__status-container:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 30%;
+    height: 1px;
+    border-top: 1px solid var(--grey100);
+  }
+}
+
+.project-status__status {
+  font-size: var(--small-font-size);
+}
+.project-status__status span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0.7rem;
+}
+
+.project-status__progress-bar-container {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
 /*# sourceMappingURL=main.css.map */
