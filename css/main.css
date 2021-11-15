@@ -263,6 +263,17 @@ input[type=submit] {
   }
 }
 
+.main-content-container {
+  margin-top: -3.5rem;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .main-content-container {
+    margin-top: -5.7rem;
+  }
+}
+
 .header-container {
   padding-top: 2rem;
   background: var(--header-gradient), url(../images/image-hero-mobile.jpg) center center no-repeat;
