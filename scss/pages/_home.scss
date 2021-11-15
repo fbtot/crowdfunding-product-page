@@ -19,3 +19,25 @@
     font-size: 1.75rem;
   }
 }
+
+.intro__buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+
+  @include mq($tablet-width, up) {
+    margin-top: 2.4rem;
+  }
+}
+
+.intro__button--right {
+  @include mq($tablet-width, down) {
+    padding: 0;
+    svg {
+      margin: 0;
+    }
+    span {
+      display: none;
+    }
+  }
+}
