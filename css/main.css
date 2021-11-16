@@ -580,7 +580,40 @@ button {
 
 .pledge__checkbox:checked:after {
   transform: translate(-0.28rem, -0.28rem) scale(1);
-  display: block;
+}
+
+/* ············ § PLEDGE TOP ··· */
+.pledge__top {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .pledge__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.pledge__top .pledge__reward {
+  order: 3;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.pledge__top__header {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .pledge__top__header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+/* ========================== § ACTIVE PLEDGE === */
+.pledge.active, .active.pledge--inactive {
+  border-color: var(--moderate-cyan);
+  border-width: 2px;
 }
 
 /* ========================== § INTRO === */
@@ -797,6 +830,14 @@ button {
   .modal__subtitle {
     margin-bottom: 2.5rem;
   }
+}
+
+/* ========================== § PLEDGE === */
+.modal__pledge__bottom {
+  display: none;
+}
+.modal__pledge.active .modal__pledge__bottom {
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */
