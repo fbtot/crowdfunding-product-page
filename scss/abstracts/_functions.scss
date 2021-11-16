@@ -1,1 +1,10 @@
 @use "./settings" as *;
+
+@function rtp($px, $pxResult: false) {
+  @if $pxResult {
+    // IMPORTANT: if --base-font-size changes with media queries, this won't change because it uses the SASS variable, not the CSS one
+    @return $px * $base-font-size;
+  }
+
+  @return calc($px * var(--base-font-size));
+}

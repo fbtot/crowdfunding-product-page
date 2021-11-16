@@ -550,6 +550,39 @@ button {
   cursor: not-allowed;
 }
 
+/* ========================== § MODAL PLEDGE === */
+.pledge__checkbox {
+  /* @mixin circle */
+  border-radius: 1000px;
+  width: 1.3rem;
+  height: 1.3rem;
+  /* end @mixin circle */
+  position: relative;
+  -webkit-appearance: none;
+  border: 1px solid var(--grey100);
+  padding: 0;
+  margin: 0;
+}
+.pledge__checkbox:after {
+  /* @mixin circle */
+  border-radius: 1000px;
+  width: 0.6rem;
+  height: 0.6rem;
+  /* end @mixin circle */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-0.28rem, -0.28rem) scale(0);
+  background: var(--moderate-cyan);
+  transition: 0.1s;
+}
+
+.pledge__checkbox:checked:after {
+  transform: translate(-0.28rem, -0.28rem) scale(1);
+  display: block;
+}
+
 /* ========================== § INTRO === */
 .intro {
   text-align: center;
@@ -726,6 +759,44 @@ button {
 /* ············ § PLEDGE ··· */
 .about__pledge:last-child {
   margin-bottom: 0;
+}
+
+.modal {
+  padding-top: 1.5rem;
+}
+
+.modal__header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal__close {
+  margin-left: auto;
+}
+
+.modal__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .modal__title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.modal__subtitle {
+  width: 100%;
+  margin-bottom: 1.3rem;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .modal__subtitle {
+    margin-bottom: 2.5rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

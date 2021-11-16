@@ -1,0 +1,33 @@
+@use "../index.scss" as *;
+
+.modal {
+  padding-top: 1.5rem;
+}
+
+.modal__header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal__close {
+  margin-left: auto;
+}
+
+.modal__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+
+  @include mq($tablet-width, up) {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.modal__subtitle {
+  width: 100%;
+  margin-bottom: 1.3rem;
+
+  @include mq($tablet-width, up) {
+    margin-bottom: 2.5rem;
+  }
+}

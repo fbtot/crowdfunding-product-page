@@ -69,3 +69,34 @@
     cursor: not-allowed;
   }
 }
+
+/* ========================== § MODAL PLEDGE === */
+
+.pledge__checkbox {
+  @include circle(1.3rem);
+  position: relative;
+  -webkit-appearance: none;
+  // background: red;
+  border: 1px solid var(--grey100);
+  padding: 0;
+  margin: 0;
+
+  &:after {
+    @include circle(0.6rem);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-0.28rem, -0.28rem) scale(0);
+    // display: none;
+    background: var(--moderate-cyan);
+    transition: 0.1s;
+  }
+}
+
+.pledge__checkbox:checked {
+  &:after {
+    transform: translate(-0.28rem, -0.28rem) scale(1);
+    display: block;
+  }
+}
