@@ -107,6 +107,7 @@
 
 /* ========================== § ABOUT === */
 .about {
+  // padding-bottom: 4rem;
   @include mq($tablet-width, down) {
     font-size: var(--small-font-size);
   }
@@ -125,6 +126,7 @@
 
 .about__text-container {
   line-height: 1.55rem;
+  margin-bottom: 2.5rem;
 
   @include mq($tablet-width, up) {
     line-height: 1.9em;
@@ -132,5 +134,12 @@
 
   p {
     margin-bottom: 1.9rem;
+  }
+}
+
+/* ············ § PLEDGE ··· */
+.about__pledge {
+  &:last-child {
+    margin-bottom: 0;
   }
 }

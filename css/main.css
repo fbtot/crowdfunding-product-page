@@ -707,6 +707,7 @@ button {
 
 .about__text-container {
   line-height: 1.55rem;
+  margin-bottom: 2.5rem;
   /* mixin mq */
   /* end mixin mq */
 }
@@ -717,6 +718,11 @@ button {
 }
 .about__text-container p {
   margin-bottom: 1.9rem;
+}
+
+/* ············ § PLEDGE ··· */
+.about__pledge:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
