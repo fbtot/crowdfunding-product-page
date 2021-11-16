@@ -52,55 +52,24 @@
 
             <div id="modal-1-content">
               <form class="modal__pledge-container" id="pledge-form">
-                <!-- ========================== § MODAL PLEDGE === -->
-                <div class="modal__pledge pledge">
-                  <!-- TOP -->
-                  <div class="modal__pledge__top pledge__top">
-                    <header class="pledge__top__header">
-                      <input type="checkbox" id="first-modal__pledge" class="modal__pledge__checkbox pledge__checkbox" />
-                      <label class="modal__pledge__title pledge__title" for="first-modal__pledge">Pledge with no reward</label>
-                      <p class="modal__pledge__amount pledge__amount">Pledge $25 or more</p>
-                    </header>
-
-                    <p class="modal__pledge__reward pledge__reward">
-                      You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
-                    </p>
-                    <p class="modal__pledge__left pledge__left"><span>101</span>left</p>
+                <article class="pledge pledge--check">
+                  <div class="pledge__top">
+                    <div class="pledge__checkbox-container">
+                      <input type="checkbox" id="pledge-checkbox-1" class="pledge__checkbox" />
+                      <label for="pledge-checkbox-1" class="pledge__label">Bamboo Stand<span class="pledge__amount">Pledge $25 or more</span></label>
+                    </div>
+                    <p class="pledge__reward">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
+                    <div class="pledge__footer">
+                      <p class="pledge__left"><span>0</span>left</p>
+                    </div>
                   </div>
-                  <!-- end top -->
-
-                  <!-- BOTTOM -->
-                  <div class="modal__pledge__bottom pledge__bottom">
-                    <p>Enter Your Pledge</p>
-                    <input type="number" placeholder="" />
-                    <button class="button--cyan modal__pledge__pledge">Continue</button>
+                  <!-- end pledge-top -->
+                  <div class="pledge__enter-container">
+                    <span class="pledge__enter__intro">Enter your pledge</span>
+                    <input type="text" class="pledge__enter__input" />
+                    <button class="button--cyan pledge__enter">Continue</button>
                   </div>
-                  <!-- end bottom -->
-                </div>
-
-                <!-- ========================== § MODAL PLEDGE 2 === -->
-                <div class="modal__pledge pledge active">
-                  <!-- TOP -->
-                  <div class="modal__pledge__top">
-                    <input type="checkbox" id="first-modal__pledge" class="modal__pledge__checkbox pledge__checkbox" />
-                    <label class="modal__pledge__title pledge__title" for="first-modal__pledge">Pledge with no reward</label>
-                    <p class="modal__pledge__amount pledge__amount">Pledge $25 or more</p>
-
-                    <p class="modal__pledge__reward pledge__reward">
-                      You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
-                    </p>
-                    <p class="modal__pledge__left pledge__left"><span>101</span>left</p>
-                  </div>
-                  <!-- end top -->
-
-                  <!-- BOTTOM -->
-                  <div class="modal__pledge__bottom">
-                    <p>Enter Your Pledge</p>
-                    <input type="number" placeholder="" />
-                    <button class="button--cyan modal__pledge__pledge">Continue</button>
-                  </div>
-                  <!-- end bottom -->
-                </div>
+                </article>
               </form>
               <!-- end modal pledge container -->
             </div>

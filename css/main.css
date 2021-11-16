@@ -43,6 +43,7 @@
   --h4-font-size: 1.3rem;
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
+  --container-padding: 2.7rem;
   --padding-container: 1.5rem;
   --border-radius-container: 0.4rem;
 }
@@ -69,7 +70,7 @@
 /* ========================== § THIS PROJECT === */
 .pledge, .pledge--inactive, .container {
   margin-bottom: 1.5rem;
-  padding: 2.7rem;
+  padding: var(--container-padding);
   background-color: white;
   border: 1px solid var(--grey100);
   border-radius: var(--border-radius-container);
@@ -317,7 +318,8 @@ input[type=submit] {
 }
 
 .button, .button--icon, .button--cyan,
-button {
+button,
+input {
   border-radius: 100px;
   border: none;
   padding: 1rem 2.8rem;
@@ -328,9 +330,14 @@ button {
 }
 @media screen and (min-width: 650px) {
   .button, .button--icon, .button--cyan,
-button {
+button,
+input {
     padding: 1rem 2.4rem;
   }
+}
+
+input {
+  border: 1px solid var(--grey100);
 }
 
 .button--cyan {
@@ -502,9 +509,12 @@ button {
   margin-bottom: 1.2rem;
 }
 
-.pledge__title {
+.pledge__title,
+.pledge__label {
   margin-top: 0;
   font-size: 1.1rem;
+  font-weight: 700;
+  color: black;
 }
 
 .pledge__amount {
@@ -534,6 +544,8 @@ button {
   padding: 1rem 2rem;
 }
 
+/* ············ § PLEDGE INACTIVE ··· */
+.pledge--inactive .pledge__label,
 .pledge--inactive .pledge__title,
 .pledge--inactive .pledge__left span {
   color: var(--dark-gray);
@@ -582,38 +594,61 @@ button {
   transform: translate(-0.28rem, -0.28rem) scale(1);
 }
 
-/* ············ § PLEDGE TOP ··· */
+/* ========================== § PLEDGE CHECK === */
+.pledge--check {
+  padding: 0;
+}
+.pledge--check .pledge__amount {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .pledge--check .pledge__amount {
+    margin-left: 1rem;
+  }
+}
+.pledge--check .pledge__reward {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .pledge--check .pledge__reward {
+    order: 3;
+    width: 100%;
+  }
+}
+
+.pledge__top,
+.pledge__enter-container {
+  padding: 1.5rem;
+}
+
 .pledge__top {
+  border-bottom: 2px solid var(--grey100);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pledge__checkbox-container {
+  display: flex;
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 650px) {
-  .pledge__top {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.pledge__top .pledge__reward {
-  order: 3;
-  grid-column-start: 1;
-  grid-column-end: -1;
+.pledge__checkbox {
+  align-self: center;
+  margin-right: 1rem;
 }
 
-.pledge__top__header {
+.pledge__label,
+.pledge__amount {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 650px) {
-  .pledge__top__header {
-    grid-column-start: 1;
-    grid-column-end: 3;
+@media screen and (max-width: 649px) {
+  .pledge__label,
+.pledge__amount {
+    display: block;
   }
-}
-
-/* ========================== § ACTIVE PLEDGE === */
-.pledge.active, .active.pledge--inactive {
-  border-color: var(--moderate-cyan);
-  border-width: 2px;
 }
 
 /* ========================== § INTRO === */

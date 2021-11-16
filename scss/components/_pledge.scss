@@ -15,9 +15,12 @@
   margin-bottom: 1.2rem;
 }
 
-.pledge__title {
+.pledge__title,
+.pledge__label {
   margin-top: 0;
   font-size: 1.1rem;
+  font-weight: 700;
+  color: black;
 }
 
 .pledge__amount {
@@ -48,9 +51,12 @@
   padding: 1rem 2rem;
 }
 
+/* ············ § PLEDGE INACTIVE ··· */
+
 .pledge--inactive {
   @extend .pledge;
 
+  .pledge__label,
   .pledge__title,
   .pledge__left span {
     color: var(--dark-gray);
@@ -76,7 +82,6 @@
   @include circle(1.3rem);
   position: relative;
   -webkit-appearance: none;
-  // background: red;
   border: 1px solid var(--grey100);
   padding: 0;
   margin: 0;
@@ -99,27 +104,50 @@
   }
 }
 
-/* ············ § PLEDGE TOP ··· */
-.pledge__top {
-  @include mq($tablet-width, up) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* ========================== § PLEDGE CHECK === */
+.pledge--check {
+  padding: 0;
+
+  .pledge__amount {
+    @include mq($tablet-width, up) {
+      margin-left: 1rem;
+    }
   }
 
   .pledge__reward {
-    order: 3;
-    @include column-start-end(1, -1);
+    @include mq($tablet-width, up) {
+      order: 3;
+      width: 100%;
+    }
   }
 }
 
-.pledge__top__header {
-  @include mq($tablet-width, up) {
-    @include column-start-end(1, 3);
+.pledge__top,
+.pledge__enter-container {
+  padding: 1.5rem;
+}
+
+.pledge__top {
+  border-bottom: 2px solid var(--grey100);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pledge__checkbox-container {
+  // @include debug;
+  display: flex;
+  @include mq($tablet-width, down) {
   }
 }
 
-/* ========================== § ACTIVE PLEDGE === */
-.pledge.active {
-  border-color: var(--moderate-cyan);
-  border-width: 2px;
+.pledge__checkbox {
+  align-self: center;
+  margin-right: 1rem;
+}
+
+.pledge__label,
+.pledge__amount {
+  @include mq($tablet-width, down) {
+    display: block;
+  }
 }
