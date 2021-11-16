@@ -262,7 +262,8 @@ input[type=submit] {
 
 .intro,
 .project-status,
-.about {
+.about,
+.page-modal {
   /* mixin mq */
   /* end mixin mq */
   /* mixin mq */
@@ -271,7 +272,8 @@ input[type=submit] {
 @media screen and (min-width: 1050px) {
   .intro,
 .project-status,
-.about {
+.about,
+.page-modal {
     grid-column-start: 3;
     grid-column-end: -3;
   }
@@ -279,7 +281,8 @@ input[type=submit] {
 @media screen and (min-width: 650px) and (max-width: 1049px) {
   .intro,
 .project-status,
-.about {
+.about,
+.page-modal {
     grid-column-start: 2;
     grid-column-end: -2;
   }

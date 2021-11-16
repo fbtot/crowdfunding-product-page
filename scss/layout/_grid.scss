@@ -24,7 +24,8 @@
 
 .intro,
 .project-status,
-.about {
+.about,
+.page-modal {
   @include mq($desktop-width, up) {
     @include column-start-end(3, -3);
   }
