@@ -47,7 +47,7 @@
           <!-- [3] -->
           <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title" class="modal-pledge">
             <header>
-              <h2 id="modal-1-title">Back this project</h2>
+              <h2 id="modal-1-title" class="modal__title">Back this project</h2>
 
               <!-- [4] -->
               <a aria-label="Close modal" data-micromodal-close><img src="./images/icon-close-modal.svg" alt="Close modal icon" /></a>
@@ -55,27 +55,27 @@
             </header>
 
             <div id="modal-1-content">
-              <form class="modal-pledge-container">
+              <form class="modal__pledge-container" id="pledge-form">
                 <!-- ========================== § MODAL PLEDGE === -->
-                <div class="modal-pledge pledge">
+                <div class="modal__pledge pledge">
                   <!-- TOP -->
-                  <div class="modal-pledge__top">
-                    <input type="checkbox" id="first-modal-pledge" class="modal-pledge__checkbox" />
-                    <label class="modal-pledge__title pledge__title" for="first-modal-pledge">Pledge with no reward</label>
-                    <p class="modal-pledge__amount pledge__amount">Pledge $25 or more</p>
+                  <div class="modal__pledge__top">
+                    <input type="checkbox" id="first-modal__pledge" class="modal__pledge__checkbox" />
+                    <label class="modal__pledge__title pledge__title" for="first-modal__pledge">Pledge with no reward</label>
+                    <p class="modal__pledge__amount pledge__amount">Pledge $25 or more</p>
 
-                    <p class="modal-pledge__reward pledge__reward">
+                    <p class="modal__pledge__reward pledge__reward">
                       You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
                     </p>
-                    <p class="modal-pledge__left pledge__left"><span>101</span>left</p>
+                    <p class="modal__pledge__left pledge__left"><span>101</span>left</p>
                   </div>
                   <!-- end top -->
 
                   <!-- BOTTOM -->
-                  <div class="modal-pledge__bottom">
+                  <div class="modal__pledge__bottom">
                     <p>Enter Your Pledge</p>
                     <input type="number" placeholder="" />
-                    <button class="button--cyan modal-pledge__pledge">Continue</button>
+                    <button class="button--cyan modal__pledge__pledge">Continue</button>
                   </div>
                   <!-- end bottom -->
                 </div>
