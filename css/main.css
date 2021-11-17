@@ -957,8 +957,19 @@ input {
   margin-bottom: 0;
 }
 
+body.modal-open:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}
+
 .modal {
   padding-top: 1.5rem;
+  position: relative;
 }
 
 .modal__header {

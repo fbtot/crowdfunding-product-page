@@ -1,7 +1,20 @@
 @use "../index.scss" as *;
 
+body.modal-open {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(black, 0.6);
+  }
+}
+
 .modal {
   padding-top: 1.5rem;
+  position: relative;
 }
 
 .modal__header {
