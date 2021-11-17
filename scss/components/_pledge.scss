@@ -18,9 +18,12 @@
 .pledge__title,
 .pledge__label {
   margin-top: 0;
-  font-size: 1.1rem;
   font-weight: 700;
   color: black;
+}
+
+.pledge__title {
+  font-size: 1.1rem;
 }
 
 .pledge__amount {
@@ -33,15 +36,16 @@
 }
 
 .pledge__left {
+  display: flex;
   margin-top: auto;
   margin-bottom: auto;
-  display: flex;
+  align-items: center;
 
   span {
     margin-right: 0.5rem;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 1rem;
+    line-height: 2rem;
     color: black;
   }
 }
@@ -114,10 +118,31 @@
     }
   }
 
+  .pledge__label {
+    font-size: var(--small-font-size);
+  }
+
+  .pledge__left {
+    span {
+      font-size: 1.3rem;
+    }
+    @include mq($tablet-width, up) {
+      margin-bottom: 1rem;
+    }
+  }
   .pledge__reward {
+    font-size: var(--small-font-size);
+
     @include mq($tablet-width, up) {
       order: 3;
       width: 100%;
+    }
+  }
+
+  .pledge__footer {
+    @include mq($tablet-width, up) {
+      margin-left: auto;
+      margin-top: 0;
     }
   }
 }
@@ -128,16 +153,15 @@
 }
 
 .pledge__top {
-  border-bottom: 2px solid var(--grey100);
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 2px solid var(--grey100);
 }
 
 .pledge__checkbox-container {
-  // @include debug;
   display: flex;
-  @include mq($tablet-width, down) {
-  }
+  margin-bottom: 1rem;
 }
 
 .pledge__checkbox {
@@ -150,4 +174,50 @@
   @include mq($tablet-width, down) {
     display: block;
   }
+}
+
+.pledge__enter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pledge__enter__intro {
+  @include mq(750px, down) {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.pledge__enter__input-button-container {
+  display: flex;
+  width: 100%;
+}
+
+.pledge__enter__input-container {
+  position: relative;
+  // flex-basis: 7rem;
+  margin-right: 1rem;
+  width: 100%;
+}
+
+.pledge__enter__input {
+  @include remove-arrows();
+  width: 100%;
+  padding: 1rem 1rem 1rem 2rem;
+}
+
+.pledge__enter__label {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  height: 100%;
+  line-height: 3.2rem;
+  align-content: center;
+}
+
+.pledge__enter__button {
+  margin-left: auto;
 }

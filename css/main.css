@@ -76,6 +76,8 @@
   border-radius: var(--border-radius-container);
 }
 
+/* ========================== § PROGRESS BAR COLORS === */
+/* ========================== § REMOVE ARROWS === */
 @keyframes focusin {
   from {
     filter: blur(20px);
@@ -512,9 +514,12 @@ input {
 .pledge__title,
 .pledge__label {
   margin-top: 0;
-  font-size: 1.1rem;
   font-weight: 700;
   color: black;
+}
+
+.pledge__title {
+  font-size: 1.1rem;
 }
 
 .pledge__amount {
@@ -527,15 +532,16 @@ input {
 }
 
 .pledge__left {
+  display: flex;
   margin-top: auto;
   margin-bottom: auto;
-  display: flex;
+  align-items: center;
 }
 .pledge__left span {
   margin-right: 0.5rem;
   font-weight: 700;
   font-size: 2rem;
-  line-height: 1rem;
+  line-height: 2rem;
   color: black;
 }
 
@@ -607,7 +613,23 @@ input {
     margin-left: 1rem;
   }
 }
+.pledge--check .pledge__label {
+  font-size: var(--small-font-size);
+}
+.pledge--check .pledge__left {
+  /* mixin mq */
+  /* end mixin mq */
+}
+.pledge--check .pledge__left span {
+  font-size: 1.3rem;
+}
+@media screen and (min-width: 650px) {
+  .pledge--check .pledge__left {
+    margin-bottom: 1rem;
+  }
+}
 .pledge--check .pledge__reward {
+  font-size: var(--small-font-size);
   /* mixin mq */
   /* end mixin mq */
 }
@@ -617,6 +639,16 @@ input {
     width: 100%;
   }
 }
+.pledge--check .pledge__footer {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 650px) {
+  .pledge--check .pledge__footer {
+    margin-left: auto;
+    margin-top: 0;
+  }
+}
 
 .pledge__top,
 .pledge__enter-container {
@@ -624,16 +656,17 @@ input {
 }
 
 .pledge__top {
-  border-bottom: 2px solid var(--grey100);
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 2px solid var(--grey100);
 }
 
 .pledge__checkbox-container {
   display: flex;
-  /* mixin mq */
-  /* end mixin mq */
+  margin-bottom: 1rem;
 }
+
 .pledge__checkbox {
   align-self: center;
   margin-right: 1rem;
@@ -649,6 +682,60 @@ input {
 .pledge__amount {
     display: block;
   }
+}
+
+.pledge__enter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pledge__enter__intro {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 749px) {
+  .pledge__enter__intro {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.pledge__enter__input-button-container {
+  display: flex;
+  width: 100%;
+}
+
+.pledge__enter__input-container {
+  position: relative;
+  margin-right: 1rem;
+  width: 100%;
+}
+
+.pledge__enter__input {
+  /* @mixin remove-arrows */
+  -moz-appearance: textfield;
+  /* end @mixin remove-arrows */
+  width: 100%;
+  padding: 1rem 1rem 1rem 2rem;
+}
+.pledge__enter__input::-webkit-outer-spin-button, .pledge__enter__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.pledge__enter__label {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  height: 100%;
+  line-height: 3.2rem;
+  align-content: center;
+}
+
+.pledge__enter__button {
+  margin-left: auto;
 }
 
 /* ========================== § INTRO === */

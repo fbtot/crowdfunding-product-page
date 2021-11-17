@@ -58,16 +58,23 @@
                       <input type="checkbox" id="pledge-checkbox-1" class="pledge__checkbox" />
                       <label for="pledge-checkbox-1" class="pledge__label">Bamboo Stand<span class="pledge__amount">Pledge $25 or more</span></label>
                     </div>
-                    <p class="pledge__reward">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
+                    <p class="pledge__reward">
+                      You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
+                    </p>
                     <div class="pledge__footer">
                       <p class="pledge__left"><span>0</span>left</p>
                     </div>
                   </div>
                   <!-- end pledge-top -->
                   <div class="pledge__enter-container">
-                    <span class="pledge__enter__intro">Enter your pledge</span>
-                    <input type="text" class="pledge__enter__input" />
-                    <button class="button--cyan pledge__enter">Continue</button>
+                    <span class="pledge__enter__intro" id="enter-pledge-label">Enter your pledge</span>
+                    <div class="pledge__enter__input-button-container">
+                      <div class="pledge__enter__input-container">
+                        <input type="number" id="input-pledge" aria-labelledby="enter-pledge-label" class="pledge__enter__input" />
+                        <label class="pledge__enter__label" for="input-pledge">$</label>
+                      </div>
+                      <button class="button--cyan pledge__enter__button">Continue</button>
+                    </div>
                   </div>
                 </article>
               </form>
