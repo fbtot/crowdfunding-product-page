@@ -176,6 +176,9 @@
   // end @mixin row-start-end
 }
 
+/* ========================== § PROGRESS BAR COLORS === */
+// Change colors to progress bar
+
 @mixin progress-bar-colors($background: chocolate, $bar: bisque) {
   /* @mixin progress-bar-colors */
   background-color: $background;
@@ -191,4 +194,18 @@
     background-color: $bar;
   }
   /* end @mixin progress-bar-colors */
+}
+
+/* ========================== § REMOVE ARROWS === */
+// Remove arrows from input[type="number"]
+
+@mixin remove-arrows() {
+  /* @mixin remove-arrows */
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  /* end @mixin remove-arrows */
 }
