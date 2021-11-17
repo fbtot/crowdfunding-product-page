@@ -137,3 +137,10 @@ button,
 input[type="submit"] {
   cursor: pointer;
 }
+
+input {
+  caret-color: var(--moderate-cyan);
+  &:focus {
+    outline-color: var(--moderate-cyan);
+  }
+}

@@ -161,7 +161,6 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  border-bottom: 2px solid var(--grey100);
 }
 
 .pledge__checkbox-container {
@@ -182,7 +181,8 @@
 }
 
 .pledge__enter-container {
-  display: flex;
+  border-top: 2px solid var(--grey100);
+  display: none;
 
   @include mq(750px, down) {
     flex-wrap: wrap;
@@ -190,6 +190,10 @@
 
   @include mq(750px, up) {
     align-items: center;
+  }
+
+  .pledge.checked & {
+    display: flex;
   }
 }
 
@@ -223,6 +227,7 @@
   @include remove-arrows();
   width: 100%;
   padding: 1rem 1rem 1rem 2rem;
+  text-align: right;
 }
 
 .pledge__enter__label {

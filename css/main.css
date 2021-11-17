@@ -226,6 +226,13 @@ input[type=submit] {
   cursor: pointer;
 }
 
+input {
+  caret-color: var(--moderate-cyan);
+}
+input:focus {
+  outline-color: var(--moderate-cyan);
+}
+
 .header-container,
 .main-content-container {
   /* mixin mq */
@@ -663,7 +670,6 @@ input {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  border-bottom: 2px solid var(--grey100);
 }
 
 .pledge__checkbox-container {
@@ -689,7 +695,8 @@ input {
 }
 
 .pledge__enter-container {
-  display: flex;
+  border-top: 2px solid var(--grey100);
+  display: none;
   /* mixin mq */
   /* end mixin mq */
   /* mixin mq */
@@ -704,6 +711,9 @@ input {
   .pledge__enter-container {
     align-items: center;
   }
+}
+.pledge.checked .pledge__enter-container, .checked.pledge--inactive .pledge__enter-container {
+  display: flex;
 }
 
 .pledge__enter__intro {
@@ -744,6 +754,7 @@ input {
   /* end @mixin remove-arrows */
   width: 100%;
   padding: 1rem 1rem 1rem 2rem;
+  text-align: right;
 }
 .pledge__enter__input::-webkit-outer-spin-button, .pledge__enter__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
