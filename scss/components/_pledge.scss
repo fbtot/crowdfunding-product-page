@@ -3,6 +3,10 @@
 .pledge {
   @extend %container;
   padding: 2.2rem 1.8rem;
+
+  &.checked {
+    border: 2px solid var(--moderate-cyan);
+  }
 }
 
 .pledge__header,

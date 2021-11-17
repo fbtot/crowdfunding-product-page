@@ -507,6 +507,9 @@ input {
 .pledge, .pledge--inactive {
   padding: 2.2rem 1.8rem;
 }
+.pledge.checked, .checked.pledge--inactive {
+  border: 2px solid var(--moderate-cyan);
+}
 
 .pledge__header,
 .pledge__footer {
