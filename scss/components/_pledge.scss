@@ -120,6 +120,11 @@
 
   .pledge__label {
     font-size: var(--small-font-size);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--moderate-cyan);
+    }
   }
 
   .pledge__left {
@@ -178,16 +183,22 @@
 
 .pledge__enter-container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+
+  @include mq(750px, down) {
+    flex-wrap: wrap;
+  }
+
+  @include mq(750px, up) {
+    align-items: center;
+  }
 }
 
 .pledge__enter__intro {
+  width: 100%;
   @include mq(750px, down) {
     display: block;
     margin-bottom: 1rem;
     text-align: center;
-    width: 100%;
   }
 }
 
@@ -201,6 +212,11 @@
   // flex-basis: 7rem;
   margin-right: 1rem;
   width: 100%;
+
+  margin-left: auto;
+  @include mq(750px, up) {
+    width: 7rem;
+  }
 }
 
 .pledge__enter__input {
@@ -219,5 +235,7 @@
 }
 
 .pledge__enter__button {
-  margin-left: auto;
+  @include mq(750px, down) {
+    margin-left: auto;
+  }
 }

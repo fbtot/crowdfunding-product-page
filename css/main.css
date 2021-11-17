@@ -615,6 +615,10 @@ input {
 }
 .pledge--check .pledge__label {
   font-size: var(--small-font-size);
+  cursor: pointer;
+}
+.pledge--check .pledge__label:hover {
+  color: var(--moderate-cyan);
 }
 .pledge--check .pledge__left {
   /* mixin mq */
@@ -686,11 +690,24 @@ input {
 
 .pledge__enter-container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  /* mixin mq */
+  /* end mixin mq */
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 749px) {
+  .pledge__enter-container {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 750px) {
+  .pledge__enter-container {
+    align-items: center;
+  }
 }
 
 .pledge__enter__intro {
+  width: 100%;
   /* mixin mq */
   /* end mixin mq */
 }
@@ -699,7 +716,6 @@ input {
     display: block;
     margin-bottom: 1rem;
     text-align: center;
-    width: 100%;
   }
 }
 
@@ -712,6 +728,14 @@ input {
   position: relative;
   margin-right: 1rem;
   width: 100%;
+  margin-left: auto;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 750px) {
+  .pledge__enter__input-container {
+    width: 7rem;
+  }
 }
 
 .pledge__enter__input {
@@ -735,7 +759,13 @@ input {
 }
 
 .pledge__enter__button {
-  margin-left: auto;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 749px) {
+  .pledge__enter__button {
+    margin-left: auto;
+  }
 }
 
 /* ========================== § INTRO === */
