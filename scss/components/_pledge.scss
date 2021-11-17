@@ -7,6 +7,27 @@
   &.checked {
     border: 2px solid var(--moderate-cyan);
   }
+
+  &.inactive {
+    .pledge__label,
+    .pledge__title,
+    .pledge__left span {
+      color: var(--dark-gray);
+    }
+
+    .pledge__amount {
+      color: var(--moderate-cyan-pale);
+    }
+    .pledge__reward,
+    .pledge__left {
+      color: var(--grey200);
+    }
+
+    .pledge__select {
+      background-color: var(--grey200);
+      cursor: not-allowed;
+    }
+  }
 }
 
 .pledge__header,
@@ -57,31 +78,6 @@
 .pledge__select {
   font-size: var(--small-font-size);
   padding: 1rem 2rem;
-}
-
-/* ············ § PLEDGE INACTIVE ··· */
-
-.pledge--inactive {
-  @extend .pledge;
-
-  .pledge__label,
-  .pledge__title,
-  .pledge__left span {
-    color: var(--dark-gray);
-  }
-
-  .pledge__amount {
-    color: var(--moderate-cyan-pale);
-  }
-  .pledge__reward,
-  .pledge__left {
-    color: var(--grey200);
-  }
-
-  .pledge__select {
-    background-color: var(--grey200);
-    cursor: not-allowed;
-  }
 }
 
 /* ========================== § MODAL PLEDGE === */

@@ -68,7 +68,7 @@
 }
 
 /* ========================== § THIS PROJECT === */
-.pledge, .pledge--inactive, .container {
+.pledge, .container {
   margin-bottom: 1.5rem;
   padding: var(--container-padding);
   background-color: white;
@@ -504,11 +504,27 @@ input {
   background-color: var(--moderate-cyan);
 }
 
-.pledge, .pledge--inactive {
+.pledge {
   padding: 2.2rem 1.8rem;
 }
-.pledge.checked, .checked.pledge--inactive {
+.pledge.checked {
   border: 2px solid var(--moderate-cyan);
+}
+.pledge.inactive .pledge__label,
+.pledge.inactive .pledge__title,
+.pledge.inactive .pledge__left span {
+  color: var(--dark-gray);
+}
+.pledge.inactive .pledge__amount {
+  color: var(--moderate-cyan-pale);
+}
+.pledge.inactive .pledge__reward,
+.pledge.inactive .pledge__left {
+  color: var(--grey200);
+}
+.pledge.inactive .pledge__select {
+  background-color: var(--grey200);
+  cursor: not-allowed;
 }
 
 .pledge__header,
@@ -558,24 +574,6 @@ input {
 .pledge__select {
   font-size: var(--small-font-size);
   padding: 1rem 2rem;
-}
-
-/* ············ § PLEDGE INACTIVE ··· */
-.pledge--inactive .pledge__label,
-.pledge--inactive .pledge__title,
-.pledge--inactive .pledge__left span {
-  color: var(--dark-gray);
-}
-.pledge--inactive .pledge__amount {
-  color: var(--moderate-cyan-pale);
-}
-.pledge--inactive .pledge__reward,
-.pledge--inactive .pledge__left {
-  color: var(--grey200);
-}
-.pledge--inactive .pledge__select {
-  background-color: var(--grey200);
-  cursor: not-allowed;
 }
 
 /* ========================== § MODAL PLEDGE === */
@@ -715,7 +713,7 @@ input {
     align-items: center;
   }
 }
-.pledge.checked .pledge__enter-container, .checked.pledge--inactive .pledge__enter-container {
+.pledge.checked .pledge__enter-container {
   display: flex;
 }
 
