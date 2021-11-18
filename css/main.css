@@ -1009,6 +1009,9 @@ body.modal-open:before {
   display: block;
   margin-left: auto;
 }
+.modal__close img {
+  cursor: pointer;
+}
 
 .modal__title {
   margin-bottom: 1.5rem;

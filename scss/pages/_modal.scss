@@ -47,6 +47,10 @@ body.modal-open {
 .modal__close {
   display: block;
   margin-left: auto;
+
+  img {
+    cursor: pointer;
+  }
 }
 
 .modal__title {
