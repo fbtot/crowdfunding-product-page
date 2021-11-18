@@ -22,7 +22,5 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3"
   },
-  "dependencies": {
-    "micromodal": "^0.4.6"
-  }
+  "type": "module"
 }
