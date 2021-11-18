@@ -968,6 +968,16 @@ body.modal-open:before {
   background: rgba(0, 0, 0, 0.6);
 }
 
+/* ========================== § MICROMODAL === */
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+/* ========================== § MODAL === */
 .modal {
   padding-top: 1.5rem;
   position: relative;

@@ -1,5 +1,4 @@
 @use "../index.scss" as *;
-
 body.modal-open {
   &:before {
     content: "";
@@ -12,6 +11,16 @@ body.modal-open {
   }
 }
 
+/* ========================== § MICROMODAL === */
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+/* ========================== § MODAL === */
 .modal {
   padding-top: 1.5rem;
   position: relative;
