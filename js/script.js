@@ -1,3 +1,5 @@
+// const MicroModal = require('micromodal'); // commonjs module
+
 /* ========================== § DOM ELEMENTS === */
 const bookmarkBtn = document.getElementById('bookmark-btn');
 
@@ -17,4 +19,8 @@ hamburgerBtn.addEventListener('click', (e) => {
   headerNavContainer.classList.toggle('open');
 
   headerNav.classList.toggle('focus-in');
+});
+
+MicroModal.init({
+  disableScroll: true,
 });

@@ -1,6 +1,7 @@
 @use "../index" as *;
 .header-container,
-.main-content-container {
+.main-content-container,
+.modal-grid {
   @include mq($tablet-width, up) {
     display: grid;
     grid-template-columns: repeat(8, 1fr);

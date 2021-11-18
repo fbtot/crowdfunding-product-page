@@ -109,6 +109,7 @@ html {
 }
 
 body {
+  position: relative;
   min-width: 100vw;
   min-height: 100vh;
   line-height: 1.6em;
@@ -234,7 +235,8 @@ input:focus {
 }
 
 .header-container,
-.main-content-container {
+.main-content-container,
+.modal-grid {
   /* mixin mq */
   /* end mixin mq */
   /* mixin mq */
@@ -242,14 +244,16 @@ input:focus {
 }
 @media screen and (min-width: 650px) {
   .header-container,
-.main-content-container {
+.main-content-container,
+.modal-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
   }
 }
 @media screen and (max-width: 649px) {
   .header-container,
-.main-content-container {
+.main-content-container,
+.modal-grid {
     padding: 0 var(--padding-container);
   }
 }
@@ -969,18 +973,31 @@ body.modal-open:before {
 }
 
 /* ========================== § MICROMODAL === */
-.modal {
+#modal-1 {
   display: none;
 }
 
-.modal.is-open {
+#modal-1.is-open {
   display: block;
 }
 
 /* ========================== § MODAL === */
+.modal-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  padding: 2vh 1rem;
+}
+
 .modal {
   padding-top: 1.5rem;
-  position: relative;
+  height: fit-content;
+  max-height: 96vh;
+  overflow: auto;
 }
 
 .modal__header {
@@ -989,6 +1006,7 @@ body.modal-open:before {
 }
 
 .modal__close {
+  display: block;
   margin-left: auto;
 }
 

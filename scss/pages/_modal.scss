@@ -12,18 +12,31 @@ body.modal-open {
 }
 
 /* ========================== § MICROMODAL === */
-.modal {
+#modal-1 {
   display: none;
 }
 
-.modal.is-open {
+#modal-1.is-open {
   display: block;
 }
 
 /* ========================== § MODAL === */
+.modal-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(black, 0.6);
+  overflow: hidden;
+  padding: 2vh 1rem;
+}
 .modal {
   padding-top: 1.5rem;
-  position: relative;
+  height: fit-content;
+  max-height: 96vh;
+  overflow: auto;
+  // position: relative;
 }
 
 .modal__header {
@@ -32,6 +45,7 @@ body.modal-open {
 }
 
 .modal__close {
+  display: block;
   margin-left: auto;
 }
 
