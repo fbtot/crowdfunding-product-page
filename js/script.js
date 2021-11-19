@@ -31,19 +31,24 @@ MicroModal.init({
 });
 
 // CLOSE BTN
-modalCloseBtn.array.forEach((button) => {
+Array.from(modalCloseBtn).forEach((button) => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
   });
 });
 
 // EXPAND
-function makeInactive() {
-  Array.from(pledgeEl).forEach((pledge) => {
-    pledge.classList.remove('checked');
+// This function expands only the selected plesge, and closes the others.
+function checkActive(el) {
+  Array.from(el).forEach((pledge) => {
+    if (pledge.querySelector('.pledge__checkbox').checked) {
+      pledge.classList.add('checked');
+    } else {
+      pledge.classList.remove('checked');
+    }
   });
 }
 
-function makeActive(checkbox) {
-  checkbox.closest('.pledge--check').classList.add('checked');
-}
+Array.from(pledgeCheckbox).forEach((checkbox) => {
+  checkbox.addEventListener('click', () => checkActive(pledgeEl));
+});
