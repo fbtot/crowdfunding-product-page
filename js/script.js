@@ -8,6 +8,8 @@ const hamburgerBtn = document.getElementById('hamburger-btn');
 const headerNav = document.getElementById('header-nav');
 const modalCloseBtn = document.getElementsByClassName('modal__close');
 
+const pledgeEl = document.getElementsByClassName('pledge--check');
+const pledgeCheckbox = document.getElementsByClassName('pledge__checkbox');
 /* ========================== § BOOKMARK BUTTON === */
 bookmarkBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -23,6 +25,7 @@ hamburgerBtn.addEventListener('click', (e) => {
 });
 
 /* ========================== § MODAL === */
+// eslint-disable-next-line no-undef
 MicroModal.init({
   disableScroll: true,
 });
@@ -33,3 +36,14 @@ modalCloseBtn.array.forEach((button) => {
     e.preventDefault();
   });
 });
+
+// EXPAND
+function makeInactive() {
+  Array.from(pledgeEl).forEach((pledge) => {
+    pledge.classList.remove('checked');
+  });
+}
+
+function makeActive(checkbox) {
+  checkbox.closest('.pledge--check').classList.add('checked');
+}
