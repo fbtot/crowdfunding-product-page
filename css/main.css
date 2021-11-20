@@ -792,7 +792,7 @@ input {
 
 .pledge__enter__error {
   position: absolute;
-  top: -4rem;
+  bottom: 4.2rem;
   right: -5rem;
   left: -5rem;
   color: var(--alert-color);

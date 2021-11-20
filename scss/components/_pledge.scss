@@ -236,11 +236,10 @@
 
 .pledge__enter__error {
   position: absolute;
-  top: -4rem;
+  bottom: 4.2rem;
   right: -5rem;
   left: -5rem;
   color: var(--alert-color);
-  // width: 350px;
   padding: 0 1rem;
   text-align: center;
   background: var(--alert-color);
