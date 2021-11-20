@@ -244,9 +244,9 @@
   text-align: center;
   background: var(--alert-color);
   line-height: 1.3em;
-  // border: 1px solid var(--alert-color);
   color: white;
   border-radius: 0.5rem;
+  display: none;
 
   &:before {
     --triangle-width: 0.7rem;

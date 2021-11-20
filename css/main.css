@@ -802,6 +802,7 @@ input {
   line-height: 1.3em;
   color: white;
   border-radius: 0.5rem;
+  display: none;
 }
 .pledge__enter__error:before {
   --triangle-width: 0.7rem;
