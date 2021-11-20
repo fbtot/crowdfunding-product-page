@@ -11,21 +11,32 @@ const modalCloseBtn = document.getElementsByClassName('modal__close');
 const pledgeEl = document.getElementsByClassName('pledge--check');
 const pledgeCheckbox = document.getElementsByClassName('pledge__checkbox');
 const enterButton = document.getElementsByClassName('pledge__enter__button');
+
+// Fields to update
+
+const totalAmountEl = document.getElementById('totalAmount');
+const backersEl = document.getElementById('backers');
+const daysLeft = document.getElementById('daysLeft');
+
 const data = {
   total: 89914,
   backers: 5007,
   daysLeft: 56,
   rewards: {
-    bambooStand {
+    bambooStand: {
       left: 101,
-      minPledge: 25
+      minPledge: 25,
     },
-    blackEdition {
+    blackEdition: {
       left: 64,
-      minPledge: 75
-    }
-  }
-}
+      minPledge: 75,
+    },
+    mahogany: {
+      left: 0,
+      minPledge: 200,
+    },
+  },
+};
 /* ========================== § BOOKMARK BUTTON === */
 bookmarkBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -82,11 +93,27 @@ Array.from(enterButton).forEach((button) => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
     if (closerInput(button).checkValidity()) {
-      console.log('input valid');
-
       inputContainer(button).classList.remove('error');
     } else {
       inputContainer(button).classList.add('error');
     }
   });
 });
+
+// SET DATA
+function setTotalAmount() {
+  totalAmountEl.innerText = data.total.toLocaleString('en-US');
+}
+setTotalAmount();
+
+function setBackers() {
+  backersEl.innerText = data.backers.toLocaleString('en-US');
+}
+
+setBackers();
+
+function setDaysLeft() {
+  daysLeft.innerText = data.daysLeft.toLocaleString('en-US');
+}
+
+setDaysLeft();
