@@ -17,3 +17,25 @@
   @extend .focus-in;
   animation-direction: reverse;
 }
+
+@keyframes cloud {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(3px, 3px);
+  }
+  50% {
+    transform: translate(6px, 0px);
+  }
+  75% {
+    transform: translate(3px, -3px);
+  }
+}
+
+.cloud-anim {
+  animation-name: cloud;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

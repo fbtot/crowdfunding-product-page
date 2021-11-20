@@ -228,6 +228,10 @@
   width: 100%;
   padding: 1rem 1rem 1rem 2rem;
   text-align: right;
+
+  &.error {
+    border: 2px solid var(--alert-color);
+  }
 }
 
 .pledge__enter__error {
