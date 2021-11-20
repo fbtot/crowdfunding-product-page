@@ -786,7 +786,7 @@ input {
 .pledge__enter__input::-webkit-outer-spin-button, .pledge__enter__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-.pledge__enter__input.error {
+.pledge__enter__input-button-container.error .pledge__enter__input {
   border: 2px solid var(--alert-color);
 }
 
@@ -817,6 +817,9 @@ input {
   bottom: calc(var(--triangle-width) * -1);
   left: 50%;
   transform: translate(calc(var(--triangle-width) * -1));
+}
+.pledge__enter__input-button-container.error .pledge__enter__error {
+  display: block;
 }
 
 .pledge__enter__label {

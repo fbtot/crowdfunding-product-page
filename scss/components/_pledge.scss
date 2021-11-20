@@ -229,7 +229,7 @@
   padding: 1rem 1rem 1rem 2rem;
   text-align: right;
 
-  &.error {
+  .pledge__enter__input-button-container.error & {
     border: 2px solid var(--alert-color);
   }
 }
@@ -261,6 +261,9 @@
     bottom: calc(var(--triangle-width) * -1);
     left: 50%;
     transform: translate(calc(var(--triangle-width) * -1));
+  }
+  .pledge__enter__input-button-container.error & {
+    display: block;
   }
 }
 
