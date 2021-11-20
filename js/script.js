@@ -38,7 +38,7 @@ Array.from(modalCloseBtn).forEach((button) => {
 });
 
 // EXPAND
-// This function expands only the selected plesge, and closes the others.
+// This function expands only the selected pledge, and closes the others.
 function checkActive(el) {
   Array.from(el).forEach((pledge) => {
     if (pledge.querySelector('.pledge__checkbox').checked) {
