@@ -230,6 +230,37 @@
   text-align: right;
 }
 
+.pledge__enter__error {
+  position: absolute;
+  top: -4rem;
+  right: -5rem;
+  left: -5rem;
+  color: var(--alert-color);
+  // width: 350px;
+  padding: 0 1rem;
+  text-align: center;
+  background: var(--alert-color);
+  line-height: 1.3em;
+  // border: 1px solid var(--alert-color);
+  color: white;
+  border-radius: 0.5rem;
+
+  &:before {
+    --triangle-width: 0.7rem;
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: var(--triangle-width) var(--triangle-width) 0 var(--triangle-width);
+    border-color: var(--alert-color) transparent transparent transparent;
+    position: absolute;
+    bottom: calc(var(--triangle-width) * -1);
+    left: 50%;
+    transform: translate(calc(var(--triangle-width) * -1));
+  }
+}
+
 .pledge__enter__label {
   position: absolute;
   top: 0;

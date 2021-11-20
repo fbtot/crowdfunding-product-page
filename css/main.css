@@ -28,6 +28,7 @@
   --header-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
   --text-color: var(--dark-gray);
   --accent-color: hsl(216, 61%, 54%);
+  --alert-color: rgb(219, 30, 30);
   --grey100: hsl(0, 0%, 92%);
   --grey200: hsl(0, 0%, 80%);
   --grey300: hsl(0, 0%, 70%);
@@ -763,6 +764,34 @@ input {
 }
 .pledge__enter__input::-webkit-outer-spin-button, .pledge__enter__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+.pledge__enter__error {
+  position: absolute;
+  top: -4rem;
+  right: -5rem;
+  left: -5rem;
+  color: var(--alert-color);
+  padding: 0 1rem;
+  text-align: center;
+  background: var(--alert-color);
+  line-height: 1.3em;
+  color: white;
+  border-radius: 0.5rem;
+}
+.pledge__enter__error:before {
+  --triangle-width: 0.7rem;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: var(--triangle-width) var(--triangle-width) 0 var(--triangle-width);
+  border-color: var(--alert-color) transparent transparent transparent;
+  position: absolute;
+  bottom: calc(var(--triangle-width) * -1);
+  left: 50%;
+  transform: translate(calc(var(--triangle-width) * -1));
 }
 
 .pledge__enter__label {
