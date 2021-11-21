@@ -20,6 +20,11 @@ const daysLeft = document.getElementById('daysLeft');
 
 const data = {
   total: 89914,
+  target: 100000,
+  percent() {
+    const percent = Math.floor((this.total / this.target) * 100);
+    return percent <= 100 ? percent : 100;
+  },
   backers: 5007,
   daysLeft: 56,
   rewards: {
