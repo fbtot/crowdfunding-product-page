@@ -1,25 +1,5 @@
-// const MicroModal = require('micromodal'); // commonjs module
-
-/* ========================== § DOM ELEMENTS === */
-const bookmarkBtn = document.getElementById('bookmark-btn');
-
-const headerNavContainer = document.getElementById('header-nav-container');
-const hamburgerBtn = document.getElementById('hamburger-btn');
-const headerNav = document.getElementById('header-nav');
-const modalCloseBtn = document.getElementsByClassName('modal__close');
-
-const pledgeEl = document.getElementsByClassName('pledge--check');
-const pledgeCheckbox = document.getElementsByClassName('pledge__checkbox');
-const enterButton = document.getElementsByClassName('pledge__enter__button');
-
-// Fields to update
-
-const totalAmountEl = document.getElementById('totalAmount');
-const backersEl = document.getElementById('backers');
-const daysLeft = document.getElementById('daysLeft');
-
 const data = {
-  total: 89914,
+  total: 89997,
   target: 100000,
   percent() {
     const percent = Math.floor((this.total / this.target) * 100);
@@ -42,6 +22,27 @@ const data = {
     },
   },
 };
+// const MicroModal = require('micromodal'); // commonjs module
+
+/* ========================== § DOM ELEMENTS === */
+const bookmarkBtn = document.getElementById('bookmark-btn');
+
+const headerNavContainer = document.getElementById('header-nav-container');
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const headerNav = document.getElementById('header-nav');
+const modalCloseBtn = document.getElementsByClassName('modal__close');
+
+const pledgeEl = document.getElementsByClassName('pledge--check');
+const pledgeCheckbox = document.getElementsByClassName('pledge__checkbox');
+const enterButton = document.getElementsByClassName('pledge__enter__button');
+
+// Fields to update
+
+const totalAmountEl = document.getElementById('totalAmount');
+const backersEl = document.getElementById('backers');
+const daysLeft = document.getElementById('daysLeft');
+const progressBarEl = document.getElementById('progress-bar');
+
 /* ========================== § BOOKMARK BUTTON === */
 bookmarkBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -118,11 +119,17 @@ function setDaysLeft() {
   daysLeft.innerText = data.daysLeft.toLocaleString('en-US');
 }
 
+// SET PERCENTAGE
+function setProgressBarValue() {
+  progressBarEl.setAttribute('value', data.percent());
+}
+
 // Update function
 function updateEverything() {
   setTotalAmount();
   setBackers();
   setDaysLeft();
+  setProgressBarValue();
 }
 
 updateEverything();
