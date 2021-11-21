@@ -119,9 +119,14 @@ function setDaysLeft() {
   daysLeft.innerText = data.daysLeft.toLocaleString('en-US');
 }
 
-// SET PERCENTAGE
 function setProgressBarValue() {
-  progressBarEl.setAttribute('value', data.percent());
+  // eslint-disable-next-line
+  anime({
+    targets: progressBarEl,
+    value: [0, data.percent()],
+    duration: 1500,
+    easing: 'easeInOutExpo',
+  });
 }
 
 // Update function
