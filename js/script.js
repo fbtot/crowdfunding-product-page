@@ -104,16 +104,20 @@ Array.from(enterButton).forEach((button) => {
 function setTotalAmount() {
   totalAmountEl.innerText = data.total.toLocaleString('en-US');
 }
-setTotalAmount();
 
 function setBackers() {
   backersEl.innerText = data.backers.toLocaleString('en-US');
 }
 
-setBackers();
-
 function setDaysLeft() {
   daysLeft.innerText = data.daysLeft.toLocaleString('en-US');
 }
 
-setDaysLeft();
+// Update function
+function updateEverything() {
+  setTotalAmount();
+  setBackers();
+  setDaysLeft();
+}
+
+updateEverything();
