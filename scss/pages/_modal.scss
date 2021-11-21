@@ -12,11 +12,13 @@ body.modal-open {
 }
 
 /* ========================== § MICROMODAL === */
-#modal-1 {
+#modal-1,
+#modal-2 {
   display: none;
 }
 
-#modal-1.is-open {
+#modal-1.is-open,
+#modal-2.is-open {
   display: block;
 }
 
@@ -30,6 +32,7 @@ body.modal-open {
   background: rgba(black, 0.6);
   overflow: hidden;
   padding: 2vh 1rem;
+  display: grid;
 }
 .modal {
   padding-top: 1.5rem;
@@ -79,5 +82,36 @@ body.modal-open {
 
   .modal__pledge.active & {
     display: block;
+  }
+}
+
+/* ========================== § MODAL COMPLETED === */
+.modal-completed-container {
+  display: grid;
+  // align-content: center;
+}
+
+.modal-completed {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: fit-content;
+  text-align: center;
+  @include mq(1260px, up) {
+    @include column-start-end(4, 6);
+  }
+
+  @include mq($tablet-width, 1260px) {
+    @include column-start-end(3, 7);
+  }
+}
+
+.modal-completed__title {
+  font-size: 1.2rem;
+}
+
+.modal-completed__text {
+  font-size: var(--small-font-size);
+  p {
+    margin-bottom: 2rem;
   }
 }

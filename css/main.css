@@ -1030,11 +1030,13 @@ body.modal-open:before {
 }
 
 /* ========================== § MICROMODAL === */
-#modal-1 {
+#modal-1,
+#modal-2 {
   display: none;
 }
 
-#modal-1.is-open {
+#modal-1.is-open,
+#modal-2.is-open {
   display: block;
 }
 
@@ -1048,6 +1050,7 @@ body.modal-open:before {
   background: rgba(0, 0, 0, 0.6);
   overflow: hidden;
   padding: 2vh 1rem;
+  display: grid;
 }
 
 .modal {
@@ -1101,6 +1104,45 @@ body.modal-open:before {
 }
 .modal__pledge.active .modal__pledge__bottom {
   display: block;
+}
+
+/* ========================== § MODAL COMPLETED === */
+.modal-completed-container {
+  display: grid;
+}
+
+.modal-completed {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: fit-content;
+  text-align: center;
+  /* mixin mq */
+  /* end mixin mq */
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 1260px) {
+  .modal-completed {
+    grid-column-start: 4;
+    grid-column-end: 6;
+  }
+}
+@media screen and (min-width: 650px) and (max-width: 1259px) {
+  .modal-completed {
+    grid-column-start: 3;
+    grid-column-end: 7;
+  }
+}
+
+.modal-completed__title {
+  font-size: 1.2rem;
+}
+
+.modal-completed__text {
+  font-size: var(--small-font-size);
+}
+.modal-completed__text p {
+  margin-bottom: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
