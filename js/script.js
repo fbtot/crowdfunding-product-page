@@ -35,6 +35,7 @@ const modalCloseBtn = document.getElementsByClassName('modal__close');
 const pledgeEl = document.getElementsByClassName('pledge--check');
 const pledgeCheckbox = document.getElementsByClassName('pledge__checkbox');
 const enterButton = document.getElementsByClassName('pledge__enter__button');
+const pledgeSelectBtn = document.getElementsByClassName('pledge__select');
 
 // Fields to update
 
@@ -53,20 +54,23 @@ bookmarkBtn.addEventListener('click', (e) => {
 hamburgerBtn.addEventListener('click', (e) => {
   e.preventDefault();
   headerNavContainer.classList.toggle('open');
-
   headerNav.classList.toggle('focus-in');
 });
 
 /* ========================== § MODAL === */
-// eslint-disable-next-line no-undef
-MicroModal.init({
-  disableScroll: true,
+Array.from(pledgeSelectBtn).forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    // eslint-disable-next-line no-undef
+    MicroModal.show('modal-1');
+  });
 });
-
 // CLOSE BTN
 Array.from(modalCloseBtn).forEach((button) => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
+    // eslint-disable-next-line no-undef
+    MicroModal.close('modal-1');
   });
 });
 
@@ -100,6 +104,8 @@ Array.from(enterButton).forEach((button) => {
     e.preventDefault();
     if (closerInput(button).checkValidity()) {
       inputContainer(button).classList.remove('error');
+      // eslint-disable-next-line no-undef
+      MicroModal.show('modal-2');
     } else {
       inputContainer(button).classList.add('error');
     }
