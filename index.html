@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/main.css" />
 
-    <!-- FONTS -->
-
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet" /> -->
     <title>Crowdfunding Product Page</title>
   </head>
   <body>
@@ -100,7 +95,7 @@
         </div>
 
         <!-- PLEDGE 1 -->
-        <article class="pledge about__pledge">
+        <article class="pledge about__pledge" data-reward="bambooStand">
           <header class="pledge__header">
             <h3 class="pledge__title">Bamboo Stand</h3>
             <span class="pledge__amount">Pledge $25 or more</span>
@@ -114,7 +109,7 @@
           </footer>
         </article>
 
-        <article class="pledge about__pledge">
+        <article class="pledge about__pledge" data-reward="blackEdition">
           <!-- PLEDGE 2 -->
           <header class="pledge__header">
             <h3 class="pledge__title">Black Edition Stand</h3>
@@ -130,7 +125,7 @@
         </article>
 
         <!-- PLEDGE 3 -->
-        <article class="pledge inactive about__pledge">
+        <article class="pledge inactive about__pledge" data-reward="mahogany">
           <header class="pledge__header">
             <h3 class="pledge__title">Mahogany Special Edition</h3>
             <span class="pledge__amount">Pledge $200 or more</span>
@@ -167,7 +162,6 @@
                       </div>
                       <p class="pledge__reward">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
                       <div class="pledge__footer">
-                        <!-- <p class="pledge__left"><span>0</span>left</p> -->
                       </div>
                     </div>
                     <!-- end pledge-top -->
@@ -184,7 +178,7 @@
                     </div>
                   </div>
                   <!-- ========================== § PLEDGE 2 === -->
-                  <div id="pledge-2" class="pledge pledge--check">
+                  <div id="pledge-2" class="pledge pledge--check" data-reward="bambooStand">
                     <div class="pledge__top">
                       <div class="pledge__checkbox-container">
                         <input type="radio" name="pledge-select" id="pledge-checkbox-2" class="pledge__checkbox" />
@@ -197,21 +191,8 @@
                         <p class="pledge__left"><span>101</span>left</p>
                       </div>
                     </div>
-                    <!-- end pledge-top -->
-                    <div class="pledge__enter-container">
-                      <span class="pledge__enter__intro" id="enter-pledge-label-2">Enter your pledge</span>
-                      <div class="pledge__enter__input-button-container">
-                        <div class="pledge__enter__input-container">
-                          <input type="number" id="input-pledge-2" aria-labelledby="enter-pledge-label-2" class="pledge__enter__input" min="25" value="25" />
-                          <span class="pledge__enter__error cloud-anim"><small>You must pledge more than 25$ for this reward.</small></span>
-                          <label class="pledge__enter__label" for="input-pledge-2">$</label>
-                        </div>
-                        <button class="button--cyan pledge__enter__button">Continue</button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ========================== § PLEDGE 3 === -->
-                  <div id="pledge-3" class="pledge pledge--check">
+                    <!-- ========================== § PLEDGE 3 === -->
+                  <div id="pledge-3" class="pledge pledge--check" data-reward="blackEdition">
                     <div class="pledge__top">
                       <div class="pledge__checkbox-container">
                         <input type="radio" name="pledge-select" id="pledge-checkbox-3" class="pledge__checkbox" />
@@ -236,7 +217,7 @@
                     </div>
                   </div>
                   <!-- ========================== § PLEDGE 4 === -->
-                  <div id="pledge-4" class="pledge inactive pledge--check">
+                  <div id="pledge-4" class="pledge inactive pledge--check" data-reward="mahogany">
                     <div class="pledge__top">
                       <div class="pledge__checkbox-container">
                         <input type="radio" name="pledge-select" id="pledge-checkbox-4" class="pledge__checkbox" />
