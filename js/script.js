@@ -51,7 +51,14 @@ const progressBarEl = document.getElementById('progress-bar');
 /* ========================== § BOOKMARK BUTTON === */
 bookmarkBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  bookmarkBtn.classList.toggle('bookmarked');
+
+  if (bookmarkBtn.classList.contains('bookmarked')) {
+    bookmarkBtn.classList.remove('bookmarked');
+    bookmarkBtn.querySelector('span').innerText = 'Bookmark';
+  } else {
+    bookmarkBtn.classList.add('bookmarked');
+    bookmarkBtn.querySelector('span').innerText = 'Bookmarked';
+  }
 });
 
 /* ========================== § HEADER NAV === */
