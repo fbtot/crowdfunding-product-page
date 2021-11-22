@@ -29,6 +29,7 @@ const data = {
 
 /* ========================== § DOM ELEMENTS === */
 const bookmarkBtn = document.getElementById('bookmark-btn');
+const backThisProjectBtn = document.getElementById('backThisProject');
 
 const headerNavContainer = document.getElementById('header-nav-container');
 const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -69,6 +70,8 @@ hamburgerBtn.addEventListener('click', (e) => {
 });
 
 /* ========================== § MODAL === */
+
+// OPEN MODAL 1
 Array.from(pledgeSelectBtn).forEach((button) => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
@@ -76,7 +79,14 @@ Array.from(pledgeSelectBtn).forEach((button) => {
     MicroModal.show('modal-1');
   });
 });
-// CLOSE BTN
+
+backThisProjectBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  // eslint-disable-next-line no-undef
+  MicroModal.show('modal-1');
+});
+
+// CLOSE MODAL 1
 Array.from(modalCloseBtn).forEach((button) => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
