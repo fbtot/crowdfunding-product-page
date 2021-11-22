@@ -41,6 +41,7 @@ const pledgeCheckEl = document.getElementsByClassName('pledge--check');
 const pledgeCheckbox = document.getElementsByClassName('pledge__checkbox');
 const enterButton = document.getElementsByClassName('pledge__enter__button');
 const pledgeSelectBtn = document.getElementsByClassName('pledge__select');
+const closeModalCompletedBtn = document.getElementById('closeModalCompleted');
 
 // Fields to update
 
@@ -93,6 +94,13 @@ Array.from(modalCloseBtn).forEach((button) => {
     // eslint-disable-next-line no-undef
     MicroModal.close('modal-1');
   });
+});
+
+// CLOSE MODAL 2
+closeModalCompletedBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  MicroModal.close('modal-1');
+  MicroModal.close('modal-2');
 });
 
 // EXPAND
@@ -195,6 +203,7 @@ Array.from(enterButton).forEach((button) => {
       data.total += Number(thisPledgeAmount(button));
 
       // UPDATE DOM
+      thisPledge(button).getElementsByClassName('pledge__enter__input')[0].value = data.rewards[thisReward(button)].minPledge;
       updateEverything();
     } else {
       inputContainer(button).classList.add('error');
