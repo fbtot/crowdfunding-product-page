@@ -99,7 +99,9 @@ Array.from(modalCloseBtn).forEach((button) => {
 // CLOSE MODAL 2
 closeModalCompletedBtn.addEventListener('click', (e) => {
   e.preventDefault();
+  // eslint-disable-next-line no-undef
   MicroModal.close('modal-1');
+  // eslint-disable-next-line no-undef
   MicroModal.close('modal-2');
 });
 
