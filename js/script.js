@@ -8,6 +8,9 @@ const data = {
   backers: 5007,
   daysLeft: 56,
   rewards: {
+    'no-reward': {
+      left: 0,
+    },
     bambooStand: {
       left: 101,
       minPledge: 25,
@@ -32,7 +35,8 @@ const hamburgerBtn = document.getElementById('hamburger-btn');
 const headerNav = document.getElementById('header-nav');
 const modalCloseBtn = document.getElementsByClassName('modal__close');
 
-const pledgeEl = document.getElementsByClassName('pledge--check');
+const pledgeEl = document.getElementsByClassName('pledge');
+const pledgeCheckEl = document.getElementsByClassName('pledge--check');
 const pledgeCheckbox = document.getElementsByClassName('pledge__checkbox');
 const enterButton = document.getElementsByClassName('pledge__enter__button');
 const pledgeSelectBtn = document.getElementsByClassName('pledge__select');
@@ -87,7 +91,7 @@ function checkActive(el) {
 }
 
 Array.from(pledgeCheckbox).forEach((checkbox) => {
-  checkbox.addEventListener('click', () => checkActive(pledgeEl));
+  checkbox.addEventListener('click', () => checkActive(pledgeCheckEl));
 });
 
 function inputContainer(button) {
@@ -98,19 +102,21 @@ function closerInput(button) {
   return inputContainer(button).getElementsByClassName('pledge__enter__input')[0];
 }
 
-// VALIDATION
-Array.from(enterButton).forEach((button) => {
-  button.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (closerInput(button).checkValidity()) {
-      inputContainer(button).classList.remove('error');
-      // eslint-disable-next-line no-undef
-      MicroModal.show('modal-2');
-    } else {
-      inputContainer(button).classList.add('error');
-    }
-  });
-});
+function thisPledge(el) {
+  return el.closest('.pledge');
+}
+
+function thisReward(button) {
+  return thisPledge(button).getAttribute('data-reward');
+}
+
+function thisPledgeAmount(button) {
+  return thisPledge(button).getElementsByClassName('pledge__enter__input')[0].value;
+}
+
+function thisLeft(button) {
+  return thisPledge(button).querySelector('.pledge__left span');
+}
 
 // SET DATA
 function setTotalAmount() {
@@ -124,6 +130,17 @@ function setBackers() {
 function setDaysLeft() {
   daysLeft.innerText = data.daysLeft.toLocaleString('en-US');
 }
+
+function setRewardsLeft() {
+  Array.from(pledgeEl).forEach((pledge) => {
+    if (pledge.querySelector('.pledge__left span') !== null) {
+      const currentPledgeLeftEl = pledge.querySelector('.pledge__left span');
+      currentPledgeLeftEl.innerText = data.rewards[thisReward(pledge)].left;
+    }
+  });
+}
+
+setRewardsLeft();
 
 function setProgressBarValue() {
   // eslint-disable-next-line
@@ -141,6 +158,28 @@ function updateEverything() {
   setBackers();
   setDaysLeft();
   setProgressBarValue();
+  setRewardsLeft();
 }
 
 updateEverything();
+
+// VALIDATION
+Array.from(enterButton).forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (closerInput(button).checkValidity()) {
+      inputContainer(button).classList.remove('error');
+      // eslint-disable-next-line no-undef
+      MicroModal.show('modal-2');
+
+      // Update data
+      data.rewards[thisReward(button)].left -= 1;
+      data.backers += 1;
+      data.total += Number(thisPledgeAmount(button));
+      // thisLeft(button).innerText = data.rewards[thisReward(button)].left;
+      updateEverything();
+    } else {
+      inputContainer(button).classList.add('error');
+    }
+  });
+});
