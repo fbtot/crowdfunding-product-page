@@ -114,9 +114,9 @@ function thisPledgeAmount(button) {
   return thisPledge(button).getElementsByClassName('pledge__enter__input')[0].value;
 }
 
-function thisLeft(button) {
-  return thisPledge(button).querySelector('.pledge__left span');
-}
+// function thisLeft(button) {
+//   return thisPledge(button).querySelector('.pledge__left span');
+// }
 
 // SET DATA
 function setTotalAmount() {
@@ -172,11 +172,12 @@ Array.from(enterButton).forEach((button) => {
       // eslint-disable-next-line no-undef
       MicroModal.show('modal-2');
 
-      // Update data
+      // UPDATE DATA
       data.rewards[thisReward(button)].left -= 1;
       data.backers += 1;
       data.total += Number(thisPledgeAmount(button));
-      // thisLeft(button).innerText = data.rewards[thisReward(button)].left;
+
+      // UPDATE DOM
       updateEverything();
     } else {
       inputContainer(button).classList.add('error');
