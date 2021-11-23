@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "liveServer": "live-server --ignore=''**/*.map,**/*.scss,**/.git/**''",
-    "liveServerSass": "live-server --ignore=''**/*.map,**/*.scss,**/.git/**'' & sass -w scss:css"
+    "liveServerSass": "live-server --ignore=''**/*.map,**/*.scss,**/.git/**'' & sass -w scss:css & postcss css/main.css -o css/main2.css -w",
+    "postcss": "postcss css/main.css -o css/main2.css"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,12 @@
   },
   "homepage": "https://github.com/Filippo-B/crowdfunding-product-page#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.3"
-  },
-  "type": "module"
+    "eslint-plugin-import": "^2.25.3",
+    "i": "^0.3.7",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2"
+  }
 }
