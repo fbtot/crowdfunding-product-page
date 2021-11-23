@@ -49,6 +49,11 @@
   --border-radius-container: 0.4rem;
 }
 
+@media screen and (max-width: 460px) {
+  :root {
+    --container-padding: 1.5rem;
+  }
+}
 .header__nav,
 .header__nav li {
   margin: 0;

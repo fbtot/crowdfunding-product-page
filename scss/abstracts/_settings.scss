@@ -64,3 +64,9 @@ $mobile-width: 460px;
   --padding-container: 1.5rem;
   --border-radius-container: 0.4rem;
 }
+
+@media screen and(max-width: $mobile-width) {
+  :root {
+    --container-padding: 1.5rem;
+  }
+}
