@@ -258,10 +258,12 @@
 .pledge__enter__error {
   position: absolute;
   bottom: 4.2rem;
+  // padding right
   right: -5rem;
+  // padding left
   left: -5rem;
   color: var(--alert-color);
-  padding: 0 1rem;
+  // padding: 0 1rem;
   text-align: center;
   background: var(--alert-color);
   line-height: 1.3em;
@@ -270,6 +272,7 @@
   display: none;
 
   &:before {
+    // triangle
     --triangle-width: 0.7rem;
     content: "";
     display: inline-block;
@@ -283,6 +286,13 @@
     left: 50%;
     transform: translate(calc(var(--triangle-width) * -1));
   }
+
+  @include mq($mobile-width, down) {
+    right: -1rem;
+    left: -1rem;
+    bottom: 5.2rem;
+  }
+
   .pledge__enter__input-button-container.error & {
     display: block;
   }

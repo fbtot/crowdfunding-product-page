@@ -837,13 +837,14 @@ input {
   right: -5rem;
   left: -5rem;
   color: var(--alert-color);
-  padding: 0 1rem;
   text-align: center;
   background: var(--alert-color);
   line-height: 1.3em;
   color: white;
   border-radius: 0.5rem;
   display: none;
+  /* mixin mq */
+  /* end mixin mq */
 }
 .pledge__enter__error:before {
   --triangle-width: 0.7rem;
@@ -858,6 +859,13 @@ input {
   bottom: calc(var(--triangle-width) * -1);
   left: 50%;
   transform: translate(calc(var(--triangle-width) * -1));
+}
+@media screen and (max-width: 459px) {
+  .pledge__enter__error {
+    right: -1rem;
+    left: -1rem;
+    bottom: 5.2rem;
+  }
 }
 .pledge__enter__input-button-container.error .pledge__enter__error {
   display: block;
