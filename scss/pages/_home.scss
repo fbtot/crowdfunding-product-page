@@ -102,6 +102,13 @@
   }
 }
 
+.project-status__status-difference {
+  @extend .focus-out;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+  color: var(--moderate-cyan);
+}
+
 /* ············ § PROGRESS BAR ··· */
 .project-status__progress-bar-container {
   @include column-start-end(1, -1);

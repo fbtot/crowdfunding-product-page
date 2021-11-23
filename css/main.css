@@ -94,12 +94,12 @@
     opacity: 100%;
   }
 }
-.focus-in, .focus-out {
+.focus-in, .focus-out, .project-status__status-difference {
   animation-name: focusin;
   animation-duration: 0.3s;
 }
 
-.focus-out {
+.focus-out, .project-status__status-difference {
   animation-direction: reverse;
 }
 
@@ -1036,6 +1036,12 @@ input {
   font-weight: bold;
   color: black;
   margin-bottom: 0.7rem;
+}
+
+.project-status__status-difference {
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+  color: var(--moderate-cyan);
 }
 
 /* ············ § PROGRESS BAR ··· */

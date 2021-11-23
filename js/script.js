@@ -96,12 +96,21 @@ function thisPledgeAmount(button) {
 // }
 
 // SET DATA
-function setTotalAmount() {
-  totalAmountEl.innerText = data.total.toLocaleString('en-US');
+function setTotalAmount(diff) {
+  if (diff !== undefined) {
+    totalAmountEl.innerHTML = `$${data.total.toLocaleString('en-US')}<sup class="project-status__status-difference">+${diff} </sup>`;
+    console.log(diff);
+  } else {
+    totalAmountEl.innerHTML = `$${data.total.toLocaleString('en-US')}`;
+  }
 }
 
-function setBackers() {
-  backersEl.innerText = data.backers.toLocaleString('en-US');
+function setBackers(diff) {
+  if (diff !== undefined) {
+    backersEl.innerHTML = `${data.backers.toLocaleString('en-US')}<sup class="project-status__status-difference">${diff}</sup>`;
+  } else {
+    backersEl.innerHTML = data.backers.toLocaleString('en-US');
+  }
 }
 
 function setDaysLeft() {
@@ -130,9 +139,9 @@ function setProgressBarValue() {
 }
 
 // Update function
-function updateEverything() {
-  setTotalAmount();
-  setBackers();
+function updateEverything(diffAmount, diffBackers) {
+  setTotalAmount(diffAmount);
+  setBackers(diffBackers);
   setDaysLeft();
   setProgressBarValue();
   setRewardsLeft();
@@ -164,7 +173,7 @@ Array.from(enterButton).forEach((button) => {
       data.total += Number(thisPledgeAmount(button));
 
       // UPDATE DOM
-      updateEverything();
+      updateEverything(thisPledgeAmount(button), '+1');
     } else {
       inputContainer(button).classList.add('error');
     }
