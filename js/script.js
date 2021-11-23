@@ -10,6 +10,7 @@ const data = {
   rewards: {
     'no-reward': {
       left: 0,
+      minPledge: 1,
     },
     bambooStand: {
       left: 101,
@@ -85,24 +86,6 @@ backThisProjectBtn.addEventListener('click', (e) => {
   e.preventDefault();
   // eslint-disable-next-line no-undef
   MicroModal.show('modal-1');
-});
-
-// CLOSE MODAL 1
-Array.from(modalCloseBtn).forEach((button) => {
-  button.addEventListener('click', (e) => {
-    e.preventDefault();
-    // eslint-disable-next-line no-undef
-    MicroModal.close('modal-1');
-  });
-});
-
-// CLOSE MODAL 2
-closeModalCompletedBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  // eslint-disable-next-line no-undef
-  MicroModal.close('modal-1');
-  // eslint-disable-next-line no-undef
-  MicroModal.close('modal-2');
 });
 
 // EXPAND
@@ -190,6 +173,15 @@ function updateEverything() {
 
 updateEverything();
 
+function resetEverything() {
+  Array.from(pledgeCheckbox).forEach((el) => {
+    const checkbox = el;
+    checkbox.checked = false;
+    thisPledge(checkbox).classList.remove('checked');
+    thisPledge(checkbox).getElementsByClassName('pledge__enter__input')[0].value = data.rewards[thisReward(checkbox)].minPledge;
+  });
+}
+
 // VALIDATION
 Array.from(enterButton).forEach((button) => {
   button.addEventListener('click', (e) => {
@@ -205,10 +197,28 @@ Array.from(enterButton).forEach((button) => {
       data.total += Number(thisPledgeAmount(button));
 
       // UPDATE DOM
-      thisPledge(button).getElementsByClassName('pledge__enter__input')[0].value = data.rewards[thisReward(button)].minPledge;
       updateEverything();
     } else {
       inputContainer(button).classList.add('error');
     }
   });
+});
+
+// CLOSE MODAL 1
+Array.from(modalCloseBtn).forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    // eslint-disable-next-line no-undef
+    MicroModal.close('modal-1');
+  });
+});
+
+// CLOSE MODAL 2
+closeModalCompletedBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  // eslint-disable-next-line no-undef
+  MicroModal.close('modal-1');
+  // eslint-disable-next-line no-undef
+  MicroModal.close('modal-2');
+  resetEverything();
 });
