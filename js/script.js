@@ -71,39 +71,6 @@ hamburgerBtn.addEventListener('click', (e) => {
   headerNav.classList.toggle('focus-in');
 });
 
-/* ========================== § MODAL === */
-
-// OPEN MODAL 1
-Array.from(pledgeSelectBtn).forEach((button) => {
-  button.addEventListener('click', (e) => {
-    e.preventDefault();
-    // eslint-disable-next-line no-undef
-    MicroModal.show('modal-1');
-  });
-});
-
-backThisProjectBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  // eslint-disable-next-line no-undef
-  MicroModal.show('modal-1');
-});
-
-// EXPAND
-// This function expands only the selected pledge, and closes the others.
-function checkActive(el) {
-  Array.from(el).forEach((pledge) => {
-    if (pledge.querySelector('.pledge__checkbox').checked) {
-      pledge.classList.add('checked');
-    } else {
-      pledge.classList.remove('checked');
-    }
-  });
-}
-
-Array.from(pledgeCheckbox).forEach((checkbox) => {
-  checkbox.addEventListener('click', () => checkActive(pledgeCheckEl));
-});
-
 function inputContainer(button) {
   return button.closest('.pledge__enter__input-button-container');
 }
@@ -221,4 +188,39 @@ closeModalCompletedBtn.addEventListener('click', (e) => {
   // eslint-disable-next-line no-undef
   MicroModal.close('modal-2');
   resetEverything();
+});
+
+/* ========================== § MODAL === */
+
+// OPEN MODAL 1
+Array.from(pledgeSelectBtn).forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (!thisPledge(button).classList.contains('inactive')) {
+      // eslint-disable-next-line no-undef
+      MicroModal.show('modal-1');
+    }
+  });
+});
+
+backThisProjectBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  // eslint-disable-next-line no-undef
+  MicroModal.show('modal-1');
+});
+
+// EXPAND
+// This function expands only the selected pledge, and closes the others.
+function checkActive(el) {
+  Array.from(el).forEach((pledge) => {
+    if (pledge.querySelector('.pledge__checkbox').checked) {
+      pledge.classList.add('checked');
+    } else {
+      pledge.classList.remove('checked');
+    }
+  });
+}
+
+Array.from(pledgeCheckbox).forEach((checkbox) => {
+  checkbox.addEventListener('click', () => checkActive(pledgeCheckEl));
 });
