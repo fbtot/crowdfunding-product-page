@@ -3,6 +3,7 @@ $base-font-size: 16px;
 $small-font-size: 16px * 0.9;
 $desktop-width: 1050px;
 $tablet-width: 650px;
+$mobile-width: 460px;
 
 @-moz-document url-prefix() {
   @font-face {

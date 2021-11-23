@@ -21,9 +21,12 @@
 }
 
 .intro__buttons-container {
-  display: flex;
-  justify-content: space-between;
   margin-top: 1.4rem;
+
+  @include mq($mobile-width, up) {
+    display: flex;
+    justify-content: space-between;
+  }
 
   @include mq($tablet-width, up) {
     margin-top: 2.4rem;
@@ -31,6 +34,10 @@
 }
 
 .intro__button--right {
+  @include mq($mobile-width, down) {
+    margin: 1rem auto 0 auto;
+  }
+
   @include mq($tablet-width, down) {
     padding: 0;
     svg {

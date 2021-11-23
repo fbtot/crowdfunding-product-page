@@ -34,8 +34,10 @@
 
 .pledge__header,
 .pledge__footer {
-  display: flex;
-  justify-content: space-between;
+  @include mq($mobile-width, up) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .pledge__header {
@@ -64,9 +66,8 @@
 
 .pledge__left {
   display: flex;
-  margin-top: auto;
-  margin-bottom: auto;
   align-items: center;
+  margin-bottom: 1rem;
 
   span {
     margin-right: 0.5rem;
@@ -74,6 +75,11 @@
     font-size: 2rem;
     line-height: 2rem;
     color: black;
+  }
+
+  @include mq($mobile-width, up) {
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 
@@ -199,7 +205,10 @@
   }
 
   .pledge.checked & {
-    display: flex;
+    display: block;
+    @include mq($mobile-width, up) {
+      display: flex;
+    }
   }
 }
 
@@ -213,8 +222,10 @@
 }
 
 .pledge__enter__input-button-container {
-  display: flex;
-  width: 100%;
+  @include mq($mobile-width, up) {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .pledge__enter__input-container {
@@ -237,6 +248,10 @@
 
   .pledge__enter__input-button-container.error & {
     border: 2px solid var(--alert-color);
+  }
+
+  @include mq($mobile-width, down) {
+    margin-bottom: 1rem;
   }
 }
 
@@ -283,6 +298,9 @@
 }
 
 .pledge__enter__button {
+  @include mq($mobile-width, down) {
+    width: 100%;
+  }
   @include mq(750px, down) {
     margin-left: auto;
   }
