@@ -98,7 +98,7 @@ function thisPledgeAmount(button) {
 // SET DATA
 function setTotalAmount(diff) {
   if (diff !== undefined) {
-    totalAmountEl.innerHTML = `$${data.total.toLocaleString('en-US')}<sup class="project-status__status-difference">+${diff} </sup>`;
+    totalAmountEl.innerHTML = `$${data.total.toLocaleString('en-US')}<sup class="project-status__status-difference">+$${diff} </sup>`;
     console.log(diff);
   } else {
     totalAmountEl.innerHTML = `$${data.total.toLocaleString('en-US')}`;

@@ -103,9 +103,11 @@
 }
 
 .project-status__status-difference {
-  @extend .focus-out;
-  animation-delay: 5s;
-  animation-fill-mode: forwards;
+  animation-name: focusin, hide-anim;
+  animation-direction: reverse, normal;
+  animation-duration: 0.3s, 0.01s;
+  animation-delay: 5s, 5.3s;
+  animation-fill-mode: forwards, forwards;
   color: var(--moderate-cyan);
 }
 
