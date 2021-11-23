@@ -9,10 +9,12 @@
   }
 
   &.inactive {
+    cursor: not-allowed;
     .pledge__label,
     .pledge__title,
     .pledge__left span {
       color: var(--dark-gray);
+      pointer-events: none;
     }
 
     .pledge__amount {
@@ -99,6 +101,10 @@
     transform: translate(-0.28rem, -0.28rem) scale(0);
     background: var(--moderate-cyan);
     transition: 0.1s;
+  }
+
+  .inactive & {
+    pointer-events: none;
   }
 }
 

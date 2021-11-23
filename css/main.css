@@ -536,10 +536,14 @@ input {
 .pledge.checked {
   border: 2px solid var(--moderate-cyan);
 }
+.pledge.inactive {
+  cursor: not-allowed;
+}
 .pledge.inactive .pledge__label,
 .pledge.inactive .pledge__title,
 .pledge.inactive .pledge__left span {
   color: var(--dark-gray);
+  pointer-events: none;
 }
 .pledge.inactive .pledge__amount {
   color: var(--moderate-cyan-pale);
@@ -628,6 +632,9 @@ input {
   transform: translate(-0.28rem, -0.28rem) scale(0);
   background: var(--moderate-cyan);
   transition: 0.1s;
+}
+.inactive .pledge__checkbox {
+  pointer-events: none;
 }
 
 .pledge__checkbox:checked:after {
