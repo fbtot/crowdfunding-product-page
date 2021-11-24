@@ -9,7 +9,7 @@ const data = {
   daysLeft: 56,
   rewards: {
     'no-reward': {
-      left: 0,
+      // left: 0,
       minPledge: 1,
     },
     bambooStand: {
@@ -17,7 +17,7 @@ const data = {
       minPledge: 25,
     },
     blackEdition: {
-      left: 64,
+      left: 1,
       minPledge: 75,
     },
     mahogany: {
@@ -146,6 +146,13 @@ function addInactive() {
     backThisProjectBtn.classList.add('button--inactive');
     backThisProjectBtn.addEventListener('click', (e) => e.preventDefault());
   }
+
+  Array.from(pledgeEl).forEach((pledge) => {
+    const reward = pledge.getAttribute('data-reward');
+    if (data.rewards[reward].left <= 0) {
+      pledge.classList.add('inactive');
+    }
+  });
 }
 // Update function
 function updateEverything(diffAmount, diffBackers) {
