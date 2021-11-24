@@ -15,10 +15,6 @@ Users should be able to:
 - See the number of total backers increment by one after confirming a pledge
 - Toggle whether or not the product is bookmarked
 
-### Screenshot
-
-![](./screenshot.jpg)
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
