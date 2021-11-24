@@ -17,7 +17,7 @@ const data = {
       minPledge: 25,
     },
     blackEdition: {
-      left: 1,
+      left: 63,
       minPledge: 75,
     },
     mahogany: {
