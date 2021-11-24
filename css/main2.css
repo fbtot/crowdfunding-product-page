@@ -564,7 +564,7 @@ input {
     color: var(--moderate-cyan);
   }
   .header__nav-container.open .header__hamburger {
-    background: url(../../images/icon-close-menu.svg) 0 0 no-repeat;
+    background: url(../images/icon-close-menu.svg) 0 0 no-repeat;
   }
 
   /* end header nav container */
