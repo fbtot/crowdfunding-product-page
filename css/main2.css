@@ -514,7 +514,7 @@ input {
   display: block;
   width: 2rem;
   height: 2rem;
-  background: url(../../images/icon-hamburger.svg) 0 0 no-repeat;
+  background: url(../images/icon-hamburger.svg) 0 0 no-repeat;
   /* mixin mq */
   /* end mixin mq */
 }
