@@ -27,7 +27,6 @@ const data = {
   },
 };
 // const MicroModal = require('micromodal'); // commonjs module
-
 /* ========================== § DOM ELEMENTS === */
 const bookmarkBtn = document.getElementById('bookmark-btn');
 const backThisProjectBtn = document.getElementById('backThisProject');
@@ -138,6 +137,16 @@ function setProgressBarValue() {
   });
 }
 
+/* ========================== § INACTIVE STATES === */
+
+function addInactive() {
+  if (data.total >= data.target) {
+    Array.from(pledgeEl).forEach((pledge) => pledge.classList.add('inactive'));
+    backThisProjectBtn.classList.remove('button--cyan');
+    backThisProjectBtn.classList.add('button--inactive');
+    backThisProjectBtn.addEventListener('click', (e) => e.preventDefault());
+  }
+}
 // Update function
 function updateEverything(diffAmount, diffBackers) {
   setTotalAmount(diffAmount);
@@ -145,6 +154,7 @@ function updateEverything(diffAmount, diffBackers) {
   setDaysLeft();
   setProgressBarValue();
   setRewardsLeft();
+  addInactive();
 }
 
 updateEverything();

@@ -70,3 +70,8 @@ input {
     fill: white;
   }
 }
+.button--inactive {
+  background-color: var(--grey200);
+  pointer-events: none;
+  color: white;
+}
